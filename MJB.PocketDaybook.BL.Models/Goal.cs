@@ -1,7 +1,6 @@
 ﻿namespace MJB.PocketDaybook.BL.Models
 {
-    public class Class1
+    public class Goal
     {
-
     }
 }
