@@ -10,6 +10,9 @@
         InvestmentSell,   // Debit Asset (Cash), Credit Investment (Asset)
         Drawing,          // Debit Drawing, Credit Asset 
         Interest,         // Debit Asset (Cash), Credit Income (Interest Revenue)
-        Capital           // Debit Asset (Cash), Credit Capital 
+        Capital,          // Debit Asset (Cash), Credit Capital 
+        Refund,           // Debit Asset (Cash), Credit Expense (Refund)
+        Fee,              // Debit Expense (Fee), Credit Asset (Cash)
+        Tax               // Debit Expense (Tax), Credit Asset (Cash)        
     }
 }
