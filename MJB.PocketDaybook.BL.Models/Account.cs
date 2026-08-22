@@ -8,6 +8,5 @@
         public string Description { get; set; } = string.Empty;
         public decimal StartingBalance { get; set; }
         public decimal CurrentBalance { get; set; }
-        public List<Transaction> Transactions { get; set; } = new List<Transaction>();
     }
 }
