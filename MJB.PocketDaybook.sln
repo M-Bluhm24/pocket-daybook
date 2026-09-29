@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MJB.PocketDaybook.BL.Models
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MJB.PocketDaybook.PL", "MJB.PocketDaybook.PL\MJB.PocketDaybook.PL.csproj", "{020AFA46-F06C-4E69-BA7F-088C99762F02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MJB.PocketDaybook.PL.Test", "MJB.PocketDaybook.PL.Test\MJB.PocketDaybook.PL.Test.csproj", "{ED575F69-596D-4066-B9E7-FB02FFCC425F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MJB.PocketDaybook.BL", "MJB.PocketDaybook.BL\MJB.PocketDaybook.BL.csproj", "{B42A87C3-6463-4FAE-9479-421BDD082AA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{020AFA46-F06C-4E69-BA7F-088C99762F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{020AFA46-F06C-4E69-BA7F-088C99762F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{020AFA46-F06C-4E69-BA7F-088C99762F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED575F69-596D-4066-B9E7-FB02FFCC425F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED575F69-596D-4066-B9E7-FB02FFCC425F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED575F69-596D-4066-B9E7-FB02FFCC425F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED575F69-596D-4066-B9E7-FB02FFCC425F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B42A87C3-6463-4FAE-9479-421BDD082AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B42A87C3-6463-4FAE-9479-421BDD082AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B42A87C3-6463-4FAE-9479-421BDD082AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B42A87C3-6463-4FAE-9479-421BDD082AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
