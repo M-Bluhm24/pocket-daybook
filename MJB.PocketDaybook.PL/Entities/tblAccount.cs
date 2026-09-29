@@ -10,6 +10,5 @@
         public decimal CurrentBalance { get; set; }
         public Guid CategoryId { get; set; }
 
-        public virtual tblAccountCategory Category { get; set; }
     }
 }
