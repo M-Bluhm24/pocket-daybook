@@ -3,10 +3,14 @@
     public class tblJournalEntry : IEntity
     {
         public Guid Id { get; set; }
-        public DateTime Date { get; set; }
-        public string Description { get; set; } = string.Empty;
+        public Guid UserId { get; set; }
+        public Guid MerchantId { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public string memo { get; set; } = string.Empty;
 
         public virtual ICollection<tblJournalLine> JournalEntryLines { get; set; } = new List<tblJournalLine>();
+        public virtual tblUser User { get; set; } 
+        public virtual tblMerchant Merchant { get; set; }   
 
     }
 }
