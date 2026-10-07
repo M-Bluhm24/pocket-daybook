@@ -1,0 +1,8 @@
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
+
+Scaffold-DbContext "Server=(localdb)\MSSQLLocalDB;Database=MJB.PocketDaybook.DB;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -Context PocketDaybookEntities -UseDatabaseNames -force
+
+Add-Migration CreateDatabase
+Update-Database
