@@ -28,6 +28,7 @@
         public NormalBalance NormalBalance { get; set; }    
 
         public virtual ICollection<tblBudgetItem> BudgetItems { get; set; } = new List<tblBudgetItem>();
+       
         public virtual tblUser User { get; set; }
 
     }

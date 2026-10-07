@@ -20,12 +20,14 @@
         public Guid Id { get; set; }
         public Guid SourceAccountId { get; set; }
         public Guid DestinationAccountId { get; set; }
-        public Guid CategoryId { get; set; }
+        public Guid TransactionCategoryId { get; set; }
+        public Guid UserId { get; set; }
         public decimal Amount { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime TransactionDate { get; set; }
         public TransactionType Type { get; set; }
         public string Memo { get; set; }
-        public virtual tblTransactionCategory Category { get; set; }
+        public virtual tblUser User { get; set; }
+        public virtual tblTransactionCategory TransactionCategory { get; set; }
         public virtual tblAccount SourceAccount { get; set; }
         public virtual tblAccount DestinationAccount { get; set; }
     }

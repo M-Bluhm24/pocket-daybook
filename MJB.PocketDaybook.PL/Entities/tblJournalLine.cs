@@ -7,7 +7,7 @@
         public Guid JournalEntryId { get; set; }
         public decimal Debit { get; set; }
         public decimal Credit { get; set; }
-        public string memo { get; set; } = string.Empty;    
+        public string Memo { get; set; } = string.Empty;    
         public virtual tblAccount Account { get; set; }
         public virtual tblJournalEntry JournalEntry { get; set; }
     }

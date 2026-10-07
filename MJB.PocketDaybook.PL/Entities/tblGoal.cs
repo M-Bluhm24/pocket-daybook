@@ -4,8 +4,8 @@
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
-        public Guid AccountId { get; set; }
-        public Guid MechantId { get; set; }
+        public Guid? AccountId { get; set; }
+        public Guid? MechantId { get; set; }
         public string Name { get; set; } 
         public string Type { get; set; }    
         public decimal TargetAmount { get; set; }
