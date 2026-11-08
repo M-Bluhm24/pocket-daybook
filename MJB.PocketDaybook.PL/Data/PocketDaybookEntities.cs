@@ -1,6 +1,9 @@
 ﻿using MJB.PocketDaybook.PL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
+using System.ComponentModel;
 
 namespace MJB.PocketDaybook.PL.Data
 {
@@ -8,17 +11,17 @@ namespace MJB.PocketDaybook.PL.Data
     {
         Guid[] userId = new Guid[2];
         Guid[] currencyId = new Guid[2];
-        Guid[] merchantId = new Guid[5];
-        Guid[] accountId = new Guid[6];
+        Guid[] merchantId = new Guid[8];
+        Guid[] accountId = new Guid[40];
         Guid[] itemId = new Guid[10];
-        Guid[] itemPriceId = new Guid[10];
-        Guid[] transactionCategoryId = new Guid[5];
+        Guid[] itemPriceId = new Guid[2];
+        Guid[] transactionCategoryId = new Guid[9];
         Guid[] transactionId = new Guid[10];
         Guid[] budgetId = new Guid[3];
         Guid[] budgetItemId = new Guid[6];
         Guid[] goalId = new Guid[3];
-        Guid[] journalEntryId = new Guid[3];
-        Guid[] journalLineId = new Guid[6];
+        Guid[] journalEntryId = new Guid[10];
+        Guid[] journalLineId = new Guid[20];
         Guid[] currencyExchangeId = new Guid[3];
 
         /**
@@ -47,10 +50,10 @@ namespace MJB.PocketDaybook.PL.Data
             CreateCurrency(modelBuilder);
             CreateMerchant(modelBuilder);
             CreateAccount(modelBuilder);
-            CreateItem(modelBuilder);
-            CreateItemPrice(modelBuilder);
+            CreateItem(modelBuilder);    
             CreateTransactionCategory(modelBuilder);
             CreateTransaction(modelBuilder);
+            CreateItemPrice(modelBuilder);
             CreateBudget(modelBuilder);
             CreateBudgetItem(modelBuilder);
             CreateGoal(modelBuilder);
@@ -61,7 +64,7 @@ namespace MJB.PocketDaybook.PL.Data
 
         private void CreateUser(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < userId.Length; i++)
+            for (int i = 0; i < userId.Length; i++)
             {
                 userId[i] = Guid.NewGuid();
             }
@@ -69,7 +72,7 @@ namespace MJB.PocketDaybook.PL.Data
             modelBuilder.Entity<tblUser>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Name).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.UserName).IsRequired().HasMaxLength(50);
                 entity.HasMany(e => e.Goals)
                       .WithOne(g => g.User)
                       .HasForeignKey(g => g.UserId)
@@ -86,8 +89,8 @@ namespace MJB.PocketDaybook.PL.Data
 
             List<tblUser> users = new List<tblUser>
             {
-                new tblUser { Id = userId[0], Name = "SpongeBob" },
-                new tblUser { Id = userId[1], Name = "Squidward" }
+                new tblUser { Id = userId[0], UserName = "SpongeBob", Password = GetHash("gary") },
+                new tblUser { Id = userId[1], UserName = "Squidward", Password = GetHash("clarinet") }
             };
 
             modelBuilder.Entity<tblUser>().HasData(users);
@@ -95,7 +98,7 @@ namespace MJB.PocketDaybook.PL.Data
 
         private void CreateCurrency(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < currencyId.Length; i++)
+            for (int i = 0; i < currencyId.Length; i++)
             {
                 currencyId[i] = Guid.NewGuid();
             }
@@ -120,7 +123,7 @@ namespace MJB.PocketDaybook.PL.Data
 
         private void CreateMerchant(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < merchantId.Length; i++)
+            for (int i = 0; i < merchantId.Length; i++)
             {
                 merchantId[i] = Guid.NewGuid();
             }
@@ -142,18 +145,21 @@ namespace MJB.PocketDaybook.PL.Data
             });
             List<tblMerchant> merchants = new List<tblMerchant>
             {
-                new tblMerchant { Id = merchantId[0], UserId = userId[0], Name = "Amazon", Description = "Online Retailer", Website = "https://www.amazon.com" },
-                new tblMerchant { Id = merchantId[1], UserId = userId[0], Name = "Walmart", Description = "Retail Store", Website = "https://www.walmart.com" },
-                new tblMerchant { Id = merchantId[2], UserId = userId[1], Name = "Target", Description = "Retail Store", Website = "https://www.target.com" },
-                new tblMerchant { Id = merchantId[3], UserId = userId[1], Name = "Best Buy", Description = "Electronics Retailer", Website = "https://www.bestbuy.com" },
-                new tblMerchant { Id = merchantId[4], UserId = userId[1], Name = "Costco", Description = "Wholesale Retailer", Website = "https://www.costco.com" }
+                new tblMerchant { Id = merchantId[0], UserId = userId[0], Name = "Bikini Bottom Power and Communications", Description = "Power and Internet", Website = "none" },
+                new tblMerchant { Id = merchantId[1], UserId = userId[0], Name = "First National Bank of Bikini Bottom", Description = "Banking and Morgage", Website = "none" },
+                new tblMerchant { Id = merchantId[2], UserId = userId[0], Name = "Quicky Mart", Description = "Retail Store", Website = "none" },
+                new tblMerchant { Id = merchantId[3], UserId = userId[1], Name = "Bikini Bottom Power and Communications", Description = "Power and Internet", Website = "none" },
+                new tblMerchant { Id = merchantId[4], UserId = userId[1], Name = "First National Bank of Bikini Bottom", Description = "Banking and Mortgage", Website = "none" },
+                new tblMerchant { Id = merchantId[5], UserId = userId[1], Name = "Quicky Mart", Description = "Retail Store", Website = "none" },
+                new tblMerchant { Id = merchantId[6], UserId = userId[0], Name = "Krusty Krab", Description = "Restaurant", Website = "none" },
+                new tblMerchant { Id = merchantId[7], UserId = userId[1], Name = "Krusty Krab", Description = "Restaurant", Website = "none" }
             };
             modelBuilder.Entity<tblMerchant>().HasData(merchants);
         }
 
-        private void CreateAccount(ModelBuilder modelBuilder)
+        private void CreateAccount(ModelBuilder modelBuilder) 
         {
-            for(int i = 0; i < accountId.Length; i++)
+            for (int i = 0; i < accountId.Length; i++)
             {
                 accountId[i] = Guid.NewGuid();
             }
@@ -177,28 +183,74 @@ namespace MJB.PocketDaybook.PL.Data
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
+            /**********************
+             * 20 Default Accounts per user
+             * 
+             * Permanent Accounts:
+             * 
+             * Assets: Cash, Checking, Savings, Retirement, Brokerage, Property
+             * Liabilities: Credit card, Loan, Mortgage
+             * Equity: Net Worth
+             * 
+             * Temperary Accounts:
+             * 
+             * Income: Salary, Secondary Income, Dividend, Interest
+             * Expenses: Rent, Groceries, Electricity, Phone, Internet, Taxes
+            **********************/
             List<tblAccount> accounts = new List<tblAccount>
             {
-                new tblAccount { Id = accountId[0], UserId = userId[0], Name = "Cash", Description = "Spongebob cash account", StartingBalance = 0m, CurrentBalance = 500m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                /*Spongebob Accounts*/
+                new tblAccount { Id = accountId[0], UserId = userId[0], Name = "Cash", Description = "Spongebob cash account", StartingBalance = 10020m, CurrentBalance = 11055m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[1], UserId = userId[0], Name = "Checking", Description = "Spongebob checking account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[2], UserId = userId[0], Name = "Savings", Description = "Spongebob savings account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[3], UserId = userId[0], Name = "Retirement", Description = "Spongebob retirement account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[4], UserId = userId[0], Name = "Brokerage", Description = "Spongebob brokerage account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[5], UserId = userId[0], Name = "Property", Description = "Spongebob property account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[6], UserId = userId[0], Name = "Credit card", Description = "Spongebob credit card account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Liability, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[7], UserId = userId[0], Name = "Loan", Description = "Spongebob loan account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Liability, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[8], UserId = userId[0], Name = "Morgage", Description = "Spongebob morgage account", StartingBalance = 25000m, CurrentBalance = 24750m, AccountCategory = AccountCategory.Liability, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[9], UserId = userId[0], Name = "Net Worth", Description = "Spongebob net worth account", StartingBalance = 0m, CurrentBalance = -14980m, AccountCategory = AccountCategory.Equity, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[10], UserId = userId[0], Name = "Income", Description = "Spongebob income account", StartingBalance = 0m, CurrentBalance = 1500m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[11], UserId = userId[0], Name = "Secondary Income", Description = "Spongebob secondary income account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[12], UserId = userId[0], Name = "Dividend", Description = "Spongebob dividend account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[13], UserId = userId[0], Name = "Interest", Description = "Spongebob interest account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[14], UserId = userId[0], Name = "Rent", Description = "Spongebob rent account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[15], UserId = userId[0], Name = "Groceries", Description = "Spongebob groceries account", StartingBalance = 0m, CurrentBalance = 15m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[16], UserId = userId[0], Name = "Electricity", Description = "Spongebob electricity account", StartingBalance = 0m, CurrentBalance = 100m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[17], UserId = userId[0], Name = "Phone", Description = "Spongebob phone account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[18], UserId = userId[0], Name = "Internet", Description = "Spongebob internet account", StartingBalance = 0m, CurrentBalance = 100m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[19], UserId = userId[0], Name = "Taxes", Description = "Spongebob taxes account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
 
-                new tblAccount { Id = accountId[1], UserId = userId[0], Name = "Accounts Payable", Description = "Spongebob total payables", StartingBalance = 0m, CurrentBalance = 750m, AccountCategory = AccountCategory.Liability, NormalBalance = NormalBalance.Credit },
+                /*Squidward Accounts*/
 
-                new tblAccount { Id = accountId[2], UserId = userId[0], Name = "Wages receivable", Description = "Spongebob wages receivable", StartingBalance = 0.00m, CurrentBalance = 500.00m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
-
-                new tblAccount { Id = accountId[3], UserId = userId[1], Name = "Cash", Description = "Squidward cash account", StartingBalance = 0m, CurrentBalance = 500m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
-
-                new tblAccount { Id = accountId[4], UserId = userId[1], Name = "Accounts Payable", Description = "Squidward total payables", StartingBalance = 0.00m, CurrentBalance = 1000.00m, AccountCategory = AccountCategory.Liability, NormalBalance = NormalBalance.Credit },
-
-                new tblAccount { Id = accountId[5], UserId = userId[1], Name = "Wages receivable", Description = "Squidward wages receivable", StartingBalance = 0.00m, CurrentBalance = 200.00m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },  
-
-            };  
+                new tblAccount { Id = accountId[20], UserId = userId[1], Name = "Cash", Description = "Squidward cash account", StartingBalance = 5000m, CurrentBalance = 4050m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[21], UserId = userId[1], Name = "Checking", Description = "Squidward checking account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[22], UserId = userId[1], Name = "Savings", Description = "Squidward savings account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[23], UserId = userId[1], Name = "Retirement", Description = "Squidward retirement account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[24], UserId = userId[1], Name = "Brokerage", Description = "Squidward brokerage account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[25], UserId = userId[1], Name = "Property", Description = "Squidward property account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Asset, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[26], UserId = userId[1], Name = "Credit card", Description = "Squidward credit card account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Liability, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[27], UserId = userId[1], Name = "Loan", Description = "Squidward loan account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Liability, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[28], UserId = userId[1], Name = "Morgage", Description = "Squidward morgage account", StartingBalance = 50000m, CurrentBalance = 49900m, AccountCategory = AccountCategory.Liability, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[29], UserId = userId[1], Name = "Net Worth", Description = "Squidward net worth account", StartingBalance = -45000m, CurrentBalance = 0m, AccountCategory = AccountCategory.Equity, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[30], UserId = userId[1], Name = "Income", Description = "Squidward income account", StartingBalance = 0m, CurrentBalance = 1000m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[31], UserId = userId[1], Name = "Secondary Income", Description = "Squidward secondary income account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[32], UserId = userId[1], Name = "Dividend", Description = "Squidward dividend account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[33], UserId = userId[1], Name = "Interest", Description = "Squidward interest account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Income, NormalBalance = NormalBalance.Credit },
+                new tblAccount { Id = accountId[34], UserId = userId[1], Name = "Rent", Description = "Squidward rent account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[35], UserId = userId[1], Name = "Groceries", Description = "Squidward groceries account", StartingBalance = 0m, CurrentBalance = 1500m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[36], UserId = userId[1], Name = "Electricity", Description = "Squidward electricity account", StartingBalance = 0m, CurrentBalance = 150m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[37], UserId = userId[1], Name = "Phone", Description = "Squidward phone account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[38], UserId = userId[1], Name = "Internet", Description = "Squidward internet account", StartingBalance = 0m, CurrentBalance = 100m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit },
+                new tblAccount { Id = accountId[39], UserId = userId[1], Name = "Taxes", Description = "Squidward taxes account", StartingBalance = 0m, CurrentBalance = 0m, AccountCategory = AccountCategory.Expense, NormalBalance = NormalBalance.Debit }
+            };
 
             modelBuilder.Entity<tblAccount>().HasData(accounts);
         }
 
         private void CreateItem(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < itemId.Length; i++)
+            for (int i = 0; i < itemId.Length; i++)
             {
                 itemId[i] = Guid.NewGuid();
             }
@@ -235,48 +287,9 @@ namespace MJB.PocketDaybook.PL.Data
             modelBuilder.Entity<tblItem>().HasData(items);
         }
 
-        private void CreateItemPrice(ModelBuilder modelBuilder)
-        {
-            for(int i = 0; i < itemPriceId.Length; i++)
-            {
-                itemPriceId[i] = Guid.NewGuid();
-            }
-
-            modelBuilder.Entity<tblItemPrices>(entity =>
-            {
-                entity.HasKey(e => e.Id).HasName("PK_tblItemPrices");
-                entity.Property(e => e.Price).IsRequired();
-                entity.Property(e => e.PurchaseDate).IsRequired();
-                entity.HasOne(e => e.Item)
-                      .WithMany(i => i.ItemPrices)
-                      .HasForeignKey(e => e.ItemId)
-                      .OnDelete(DeleteBehavior.Cascade);
-                entity.HasOne(e => e.Merchant)
-                      .WithMany(m => m.ItemPrices)
-                      .HasForeignKey(e => e.MerchantId)
-                      .OnDelete(DeleteBehavior.Cascade);
-            });
-
-            List<tblItemPrices> itemPrices = new List<tblItemPrices>
-            {
-                new tblItemPrices { Id = itemPriceId[0], ItemId = itemId[0], MerchantId = merchantId[0], Price = 5.99m, PurchaseDate = DateTime.Now.AddDays(-10) },
-                new tblItemPrices { Id = itemPriceId[1], ItemId = itemId[1], MerchantId = merchantId[1], Price = 15.49m, PurchaseDate = DateTime.Now.AddDays(-5) },
-                new tblItemPrices { Id = itemPriceId[2], ItemId = itemId[2], MerchantId = merchantId[2], Price = 25.00m, PurchaseDate = DateTime.Now.AddDays(-3) },
-                new tblItemPrices { Id = itemPriceId[3], ItemId = itemId[3], MerchantId = merchantId[3], Price = 199.99m, PurchaseDate = DateTime.Now.AddDays(-7) },
-                new tblItemPrices { Id = itemPriceId[4], ItemId = itemId[4], MerchantId = merchantId[4], Price = 12.75m, PurchaseDate = DateTime.Now.AddDays(-2) },
-                new tblItemPrices { Id = itemPriceId[5], ItemId = itemId[5], MerchantId = merchantId[0], Price = 8.99m, PurchaseDate = DateTime.Now.AddDays(-1) },
-                new tblItemPrices { Id = itemPriceId[6], ItemId = itemId[6], MerchantId = merchantId[1], Price = 3.49m, PurchaseDate = DateTime.Now.AddDays(-4) },
-                new tblItemPrices { Id = itemPriceId[7], ItemId = itemId[7], MerchantId = merchantId[2], Price = 1.99m, PurchaseDate = DateTime.Now.AddDays(-6) },
-                new tblItemPrices { Id = itemPriceId[8], ItemId = itemId[8], MerchantId = merchantId[3], Price = 30.00m, PurchaseDate = DateTime.Now.AddDays(-8) },
-                new tblItemPrices { Id = itemPriceId[9], ItemId = itemId[9], MerchantId = merchantId[4], Price = 6.49m, PurchaseDate = DateTime.Now.AddDays(-9) }
-            };
-
-            modelBuilder.Entity<tblItemPrices>().HasData(itemPrices);
-        }
-
         private void CreateTransactionCategory(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < transactionCategoryId.Length; i++)
+            for (int i = 0; i < transactionCategoryId.Length; i++)
             {
                 transactionCategoryId[i] = Guid.NewGuid();
             }
@@ -298,7 +311,11 @@ namespace MJB.PocketDaybook.PL.Data
                 new tblTransactionCategory { Id = transactionCategoryId[1], UserId = userId[0], Name = "Utilities", Description = "Electricity, water, gas, etc." },
                 new tblTransactionCategory { Id = transactionCategoryId[2], UserId = userId[1], Name = "Groceries", Description = "My food for the month" },
                 new tblTransactionCategory { Id = transactionCategoryId[3], UserId = userId[1], Name = "Transportation", Description = "Gas, public transit, etc." },
-                new tblTransactionCategory { Id = transactionCategoryId[4], UserId = userId[1], Name = "Utilities", Description = "Rent and bills" }
+                new tblTransactionCategory { Id = transactionCategoryId[4], UserId = userId[1], Name = "Utilities", Description = "Rent and bills" },
+                new tblTransactionCategory { Id = transactionCategoryId[5], UserId = userId[0], Name = "Income", Description = "Money from various sources" },
+                new tblTransactionCategory { Id = transactionCategoryId[6], UserId = userId[1], Name = "Income", Description = "Money from various sources" },
+                new tblTransactionCategory { Id = transactionCategoryId[7], UserId = userId[0], Name = "Housing", Description = "Morgage, rent, upkeep" },
+                new tblTransactionCategory { Id = transactionCategoryId[8], UserId = userId[1], Name = "Housing", Description = "Morgage, rent, upkeep" }
             };
 
             modelBuilder.Entity<tblTransactionCategory>().HasData(transactionCategories);
@@ -306,7 +323,7 @@ namespace MJB.PocketDaybook.PL.Data
 
         private void CreateTransaction(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < transactionId.Length; i++)
+            for (int i = 0; i < transactionId.Length; i++)
             {
                 transactionId[i] = Guid.NewGuid();
             }
@@ -322,40 +339,78 @@ namespace MJB.PocketDaybook.PL.Data
                       .WithMany()
                       .HasForeignKey(e => e.UserId)
                       .OnDelete(DeleteBehavior.NoAction);
-                entity.HasOne(e => e.SourceAccount)
+                entity.HasOne(e => e.Merchant)
                       .WithMany()
-                      .HasForeignKey(e => e.SourceAccountId)
-                      .OnDelete(DeleteBehavior.NoAction);
-                entity.HasOne(e => e.DestinationAccount)
-                      .WithMany()
-                      .HasForeignKey(e => e.DestinationAccountId)
+                      .HasForeignKey(e => e.MerchantId)
                       .OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(e => e.TransactionCategory)
                       .WithMany()
                       .HasForeignKey(e => e.TransactionCategoryId)
+                      .OnDelete(DeleteBehavior.NoAction);      
+                entity.HasMany(e => e.ItemPrices)
+                      .WithOne(ip => ip.Transaction)
+                      .HasForeignKey(ip => ip.TransactionId)
                       .OnDelete(DeleteBehavior.NoAction);
             });
 
             List<tblTransaction> transactions = new List<tblTransaction>
             {
-                new tblTransaction { Id = transactionId[0], UserId = userId[0], SourceAccountId = accountId[0], DestinationAccountId = accountId[1], TransactionCategoryId = transactionCategoryId[0], Amount = 50.00m, TransactionDate = DateTime.Now.AddDays(-10), Type = TransactionType.Expense, Memo = "Grocery shopping" },
-                new tblTransaction { Id = transactionId[1], UserId = userId[0], SourceAccountId = accountId[2], DestinationAccountId = accountId[0], TransactionCategoryId = transactionCategoryId[1], Amount = 100.00m, TransactionDate = DateTime.Now.AddDays(-5), Type = TransactionType.Income, Memo = "Salary payment" },
-                new tblTransaction { Id = transactionId[2], UserId = userId[1], SourceAccountId = accountId[3], DestinationAccountId = accountId[4], TransactionCategoryId = transactionCategoryId[2], Amount = 75.00m, TransactionDate = DateTime.Now.AddDays(-3), Type = TransactionType.Expense, Memo = "Grocery shopping" },
-                new tblTransaction { Id = transactionId[3], UserId = userId[1], SourceAccountId = accountId[5], DestinationAccountId = accountId[3], TransactionCategoryId = transactionCategoryId[3], Amount = 200.00m, TransactionDate = DateTime.Now.AddDays(-7), Type = TransactionType.Income, Memo = "Freelance project payment" },
-                new tblTransaction { Id = transactionId[4], UserId = userId[0], SourceAccountId = accountId[1], DestinationAccountId = accountId[2], TransactionCategoryId = transactionCategoryId[4], Amount = 30.00m, TransactionDate = DateTime.Now.AddDays(-2), Type = TransactionType.Expense, Memo = "Utility bill payment" },
-                new tblTransaction { Id = transactionId[5], UserId = userId[1], SourceAccountId = accountId[4], DestinationAccountId = accountId[5], TransactionCategoryId = transactionCategoryId[0], Amount = 60.00m, TransactionDate = DateTime.Now.AddDays(-1), Type = TransactionType.Expense, Memo = "Grocery shopping" },
-                new tblTransaction { Id = transactionId[6], UserId = userId[0], SourceAccountId = accountId[0], DestinationAccountId = accountId[1], TransactionCategoryId = transactionCategoryId[1], Amount = 40.00m, TransactionDate = DateTime.Now.AddDays(-4), Type = TransactionType.Expense, Memo = "Utility bill payment" },
-                new tblTransaction { Id = transactionId[7], UserId = userId[1], SourceAccountId = accountId[3], DestinationAccountId = accountId[4], TransactionCategoryId = transactionCategoryId[2], Amount = 90.00m, TransactionDate = DateTime.Now.AddDays(-6), Type = TransactionType.Expense, Memo = "Grocery shopping" },
-                new tblTransaction { Id = transactionId[8], UserId = userId[0], SourceAccountId = accountId[2], DestinationAccountId = accountId[0], TransactionCategoryId = transactionCategoryId[3], Amount = 150.00m, TransactionDate = DateTime.Now.AddDays(-8), Type = TransactionType.Income, Memo = "Freelance project payment" },
-                new tblTransaction { Id = transactionId[9], UserId = userId[1], SourceAccountId = accountId[5], DestinationAccountId = accountId[3], TransactionCategoryId = transactionCategoryId[4], Amount = 25.00m, TransactionDate = DateTime.Now.AddDays(-9), Type = TransactionType.Expense, Memo = "Utility bill payment" }
+                new tblTransaction { Id = transactionId[0], UserId = userId[0], TransactionCategoryId = transactionCategoryId[5], MerchantId = merchantId[6], Amount = 1500.00m, TransactionDate = DateTime.Now.AddDays(-10), Type = TransactionType.Expense, Memo = "Income" },
+                new tblTransaction {Id = transactionId[1], UserId = userId[0], TransactionCategoryId = transactionCategoryId[1], MerchantId = merchantId[0], Amount = 100.00m, TransactionDate = DateTime.Now.AddDays(-5), Type = TransactionType.Income, Memo = "Power Payment"},
+                new tblTransaction { Id = transactionId[2], UserId = userId[0], TransactionCategoryId = transactionCategoryId[7], MerchantId = merchantId[1], Amount = 250.00m, TransactionDate = DateTime.Now.AddDays(-3), Type = TransactionType.Expense, Memo = "Morgage Payment" },
+                new tblTransaction { Id = transactionId[3], UserId = userId[0], TransactionCategoryId = transactionCategoryId[0], MerchantId = merchantId[2], Amount = 15.00m, TransactionDate = DateTime.Now.AddDays(-7), Type = TransactionType.Income, Memo = "Groceries" },
+                new tblTransaction { Id = transactionId[4], UserId = userId[0], TransactionCategoryId = transactionCategoryId[1], MerchantId = merchantId[0], Amount = 100.00m, TransactionDate = DateTime.Now.AddDays(-2), Type = TransactionType.Expense, Memo = "Internet Payment" },
+                new tblTransaction { Id = transactionId[5], UserId = userId[1], TransactionCategoryId = transactionCategoryId[6], MerchantId = merchantId[7], Amount = 1000.00m, TransactionDate = DateTime.Now.AddDays(-1), Type = TransactionType.Expense, Memo = "Income" },
+                new tblTransaction { Id = transactionId[6], UserId = userId[1], TransactionCategoryId = transactionCategoryId[4], MerchantId = merchantId[3], Amount = 150.00m, TransactionDate = DateTime.Now.AddDays(-4), Type = TransactionType.Expense, Memo = "Power Payment" },
+                new tblTransaction { Id = transactionId[7], UserId = userId[1], TransactionCategoryId = transactionCategoryId[8], MerchantId = merchantId[4], Amount = 100.00m, TransactionDate = DateTime.Now.AddDays(-6), Type = TransactionType.Expense, Memo = "Morgage Payment" },
+                new tblTransaction { Id = transactionId[8], UserId = userId[1], TransactionCategoryId = transactionCategoryId[1], MerchantId = merchantId[5], Amount = 1500.00m, TransactionDate = DateTime.Now.AddDays(-8), Type = TransactionType.Income, Memo = "Groceries" },
+                new tblTransaction { Id = transactionId[9], UserId = userId[1], TransactionCategoryId = transactionCategoryId[4], MerchantId = merchantId[3], Amount = 100.00m, TransactionDate = DateTime.Now.AddDays(-9), Type = TransactionType.Expense, Memo = "Internet Payment" }
             };
 
             modelBuilder.Entity<tblTransaction>().HasData(transactions);
         }
+        private void CreateItemPrice(ModelBuilder modelBuilder)
+        {
+            for (int i = 0; i < itemPriceId.Length; i++)
+            {
+                itemPriceId[i] = Guid.NewGuid();
+            }
+
+            modelBuilder.Entity<tblItemPrices>(entity =>
+            {
+                entity.HasKey(e => e.Id).HasName("PK_tblItemPrices");
+                entity.Property(e => e.Price).IsRequired();
+                entity.Property(e => e.PurchaseDate).IsRequired();
+                entity.HasOne(e => e.Item)
+                      .WithMany(i => i.ItemPrices)
+                      .HasForeignKey(e => e.ItemId)
+                      .OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(e => e.Merchant)
+                      .WithMany(m => m.ItemPrices)
+                      .HasForeignKey(e => e.MerchantId)
+                      .OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(e => e.User)
+                      .WithMany()
+                      .HasForeignKey(e => e.UserId)
+                      .OnDelete(DeleteBehavior.NoAction);
+                entity.HasOne(e => e.Transaction)
+                      .WithMany(t => t.ItemPrices)
+                      .HasForeignKey(e => e.TransactionId)
+                      .OnDelete(DeleteBehavior.NoAction);
+            });
+
+            List<tblItemPrices> itemPrices = new List<tblItemPrices>
+            {
+                new tblItemPrices { Id = itemPriceId[0], ItemId = itemId[0], MerchantId = merchantId[2], UserId = userId[0], TransactionId = transactionId[3], Price = 15.00m, PurchaseDate = DateTime.Now.AddDays(-7) },
+                new tblItemPrices { Id = itemPriceId[1], ItemId = itemId[3], MerchantId = merchantId[5], UserId = userId[1], TransactionId = transactionId[8], Price = 1500.00m, PurchaseDate = DateTime.Now.AddDays(-8) },
+            };
+
+            modelBuilder.Entity<tblItemPrices>().HasData(itemPrices);
+        }
 
         private void CreateBudget(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < budgetId.Length; i++)
+            for (int i = 0; i < budgetId.Length; i++)
             {
                 budgetId[i] = Guid.NewGuid();
             }
@@ -388,7 +443,7 @@ namespace MJB.PocketDaybook.PL.Data
 
         private void CreateBudgetItem(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < budgetItemId.Length; i++)
+            for (int i = 0; i < budgetItemId.Length; i++)
             {
                 budgetItemId[i] = Guid.NewGuid();
             }
@@ -426,7 +481,7 @@ namespace MJB.PocketDaybook.PL.Data
 
         private void CreateGoal(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < goalId.Length; i++)
+            for (int i = 0; i < goalId.Length; i++)
             {
                 goalId[i] = Guid.NewGuid();
             }
@@ -465,10 +520,10 @@ namespace MJB.PocketDaybook.PL.Data
 
         private void CreateJournalEntry(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < journalEntryId.Length; i++)
+            for (int i = 0; i < journalEntryId.Length; i++)
             {
                 journalEntryId[i] = Guid.NewGuid();
-            }   
+            }
 
             modelBuilder.Entity<tblJournalEntry>(entity =>
             {
@@ -487,16 +542,23 @@ namespace MJB.PocketDaybook.PL.Data
 
             List<tblJournalEntry> journalEntries = new List<tblJournalEntry>
             {
-                new tblJournalEntry { Id = journalEntryId[0], UserId = userId[0], MerchantId = merchantId[0], EntryDate = DateTime.Now.AddDays(-10), Memo = "Grocery shopping at Amazon" },
-                new tblJournalEntry { Id = journalEntryId[1], UserId = userId[0], MerchantId = merchantId[1], EntryDate = DateTime.Now.AddDays(-5), Memo = "Bought a new fishing net from Walmart" },
-                new tblJournalEntry { Id = journalEntryId[2], UserId = userId[1], MerchantId = merchantId[2], EntryDate = DateTime.Now.AddDays(-3), Memo = "Purchased art supplies from Target" }
+                new tblJournalEntry { Id = journalEntryId[0], UserId = userId[0], MerchantId = merchantId[6], EntryDate = DateTime.Now.AddDays(-10), Memo = "Payday" },
+                new tblJournalEntry { Id = journalEntryId[1], UserId = userId[0], MerchantId = merchantId[0], EntryDate = DateTime.Now.AddDays(-5), Memo = "Power Payment" },
+                new tblJournalEntry { Id = journalEntryId[2], UserId = userId[0], MerchantId = merchantId[1], EntryDate = DateTime.Now.AddDays(-3), Memo = "Morgage Payment" },
+                new tblJournalEntry { Id = journalEntryId[3], UserId = userId[0], MerchantId = merchantId[2], EntryDate = DateTime.Now.AddDays(-7), Memo = "Groceries" },
+                new tblJournalEntry { Id = journalEntryId[4], UserId = userId[0], MerchantId = merchantId[0], EntryDate = DateTime.Now.AddDays(-2), Memo = "Internet Payment" },
+                new tblJournalEntry { Id = journalEntryId[5], UserId = userId[1], MerchantId = merchantId[7], EntryDate = DateTime.Now.AddDays(-1), Memo = "Payday" },
+                new tblJournalEntry { Id = journalEntryId[6], UserId = userId[1], MerchantId = merchantId[3], EntryDate = DateTime.Now.AddDays(-4), Memo = "Power Payment" },
+                new tblJournalEntry { Id = journalEntryId[7], UserId = userId[1], MerchantId = merchantId[4], EntryDate = DateTime.Now.AddDays(-6), Memo = "Morgage Payment" },
+                new tblJournalEntry { Id = journalEntryId[8], UserId = userId[1], MerchantId = merchantId[5], EntryDate = DateTime.Now.AddDays(-8), Memo = "Groceries" },
+                new tblJournalEntry { Id = journalEntryId[9], UserId = userId[1], MerchantId = merchantId[3], EntryDate = DateTime.Now.AddDays(-9), Memo = "Internet Payment" }
             };
             modelBuilder.Entity<tblJournalEntry>().HasData(journalEntries);
         }
 
         private void CreateJournalLine(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < journalLineId.Length; i++)
+            for (int i = 0; i < journalLineId.Length; i++)
             {
                 journalLineId[i] = Guid.NewGuid();
             }
@@ -506,7 +568,7 @@ namespace MJB.PocketDaybook.PL.Data
                 entity.HasKey(e => e.Id).HasName("PK_tblJournalLine");
                 entity.Property(e => e.Debit).IsRequired();
                 entity.Property(e => e.Credit).IsRequired();
-                entity.Property(e => e.Memo).HasMaxLength(500);  
+                entity.Property(e => e.Memo).HasMaxLength(500);
                 entity.HasOne(e => e.JournalEntry)
                       .WithMany(je => je.JournalEntryLines)
                       .HasForeignKey(e => e.JournalEntryId)
@@ -519,21 +581,35 @@ namespace MJB.PocketDaybook.PL.Data
 
             List<tblJournalLine> journalLines = new List<tblJournalLine>
             {
-               new tblJournalLine { Id = journalLineId[0], JournalEntryId = journalEntryId[0], AccountId = accountId[0], Debit = 50.00m, Credit = 0.00m, Memo = "Grocery shopping at Amazon" },
-                new tblJournalLine { Id = journalLineId[1], JournalEntryId = journalEntryId[0], AccountId = accountId[1], Debit = 0.00m, Credit = 50.00m, Memo = "Grocery shopping at Amazon" },
-                new tblJournalLine { Id = journalLineId[2], JournalEntryId = journalEntryId[1], AccountId = accountId[0], Debit = 25.00m, Credit = 0.00m, Memo = "Bought a new fishing net from Walmart" },
-                new tblJournalLine { Id = journalLineId[3], JournalEntryId = journalEntryId[1], AccountId = accountId[1], Debit = 0.00m, Credit = 25.00m, Memo = "Bought a new fishing net from Walmart" },
-                new tblJournalLine { Id = journalLineId[4], JournalEntryId = journalEntryId[2], AccountId = accountId[0], Debit = 75.00m, Credit = 0.00m, Memo = "Purchased art supplies from Target" },
-                new tblJournalLine { Id = journalLineId[5], JournalEntryId = journalEntryId[2], AccountId = accountId[1], Debit = 0.00m, Credit = 75.00m, Memo = "Purchased art supplies from Target" }
+               new tblJournalLine { Id = journalLineId[0], JournalEntryId = journalEntryId[0], AccountId = accountId[0], Debit = 1500.00m, Credit = 0.00m, Memo = "Income" },
+               new tblJournalLine { Id = journalLineId[1], JournalEntryId = journalEntryId[0], AccountId = accountId[10], Debit = 0.00m, Credit = 1500.00m, Memo = "Income" },
+                new tblJournalLine { Id = journalLineId[2], JournalEntryId = journalEntryId[1], AccountId = accountId[16], Debit = 100.00m, Credit = 0.00m, Memo = "Power Payment" },
+                new tblJournalLine { Id = journalLineId[3], JournalEntryId = journalEntryId[1], AccountId = accountId[0], Debit = 0.00m, Credit = 100.00m, Memo = "Power Payment" },
+                new tblJournalLine { Id = journalLineId[4], JournalEntryId = journalEntryId[2], AccountId = accountId[8], Debit = 250.00m, Credit = 0.00m, Memo = "Morgage Payment" },
+                new tblJournalLine { Id = journalLineId[5], JournalEntryId = journalEntryId[2], AccountId = accountId[0], Debit = 0.00m, Credit = 250.00m, Memo = "Morgage Payment" },
+                new tblJournalLine { Id = journalLineId[6], JournalEntryId = journalEntryId[3], AccountId = accountId[15], Debit = 15.00m, Credit = 0.00m, Memo = "Groceries" },
+                new tblJournalLine { Id = journalLineId[7], JournalEntryId = journalEntryId[3], AccountId = accountId[0], Debit = 0.00m, Credit = 15.00m, Memo = "Groceries" },
+                new tblJournalLine { Id = journalLineId[8], JournalEntryId = journalEntryId[4], AccountId = accountId[18], Debit = 100.00m, Credit = 0.00m, Memo = "Internet Payment" },
+                new tblJournalLine { Id = journalLineId[9], JournalEntryId = journalEntryId[4], AccountId = accountId[0], Debit = 0.00m, Credit = 100.00m, Memo = "Internet Payment" },
+                new tblJournalLine { Id = journalLineId[10], JournalEntryId = journalEntryId[5], AccountId = accountId[20], Debit = 1000.00m, Credit = 0.00m, Memo = "Income" },
+                new tblJournalLine { Id = journalLineId[11], JournalEntryId = journalEntryId[5], AccountId = accountId[30], Debit = 0.00m, Credit = 1000.00m, Memo = "Income" },
+                new tblJournalLine { Id = journalLineId[12], JournalEntryId = journalEntryId[6], AccountId = accountId[36], Debit = 150.00m, Credit = 0.00m, Memo = "Power Payment" },
+                new tblJournalLine { Id = journalLineId[13], JournalEntryId = journalEntryId[6], AccountId = accountId[20], Debit = 0.00m, Credit = 150.00m, Memo = "Power Payment" },
+                new tblJournalLine { Id = journalLineId[14], JournalEntryId = journalEntryId[7], AccountId = accountId[28], Debit = 100.00m, Credit = 0.00m, Memo = "Morgage Payment" },
+                new tblJournalLine { Id = journalLineId[15], JournalEntryId = journalEntryId[7], AccountId = accountId[20], Debit = 0.00m, Credit = 100.00m, Memo = "Morgage Payment" },
+                new tblJournalLine { Id = journalLineId[16], JournalEntryId = journalEntryId[8], AccountId = accountId[35], Debit = 1500.00m, Credit = 0.00m, Memo = "Groceries" },
+                new tblJournalLine { Id = journalLineId[17], JournalEntryId = journalEntryId[8], AccountId = accountId[20], Debit = 0.00m, Credit = 1500.00m, Memo = "Groceries" },
+                new tblJournalLine { Id = journalLineId[18], JournalEntryId = journalEntryId[9], AccountId = accountId[38], Debit = 100.00m, Credit = 0.00m, Memo = "Internet Payment" },
+                new tblJournalLine { Id = journalLineId[19], JournalEntryId = journalEntryId[9], AccountId = accountId[20], Debit = 0.00m, Credit = 100.00m, Memo = "Internet Payment" },
 
-            };  
+            };
 
             modelBuilder.Entity<tblJournalLine>().HasData(journalLines);
         }
 
         private void CreateCurrencyExchange(ModelBuilder modelBuilder)
         {
-            for(int i = 0; i < currencyExchangeId.Length; i++)
+            for (int i = 0; i < currencyExchangeId.Length; i++)
             {
                 currencyExchangeId[i] = Guid.NewGuid();
             }
@@ -558,9 +634,18 @@ namespace MJB.PocketDaybook.PL.Data
                 new tblCurrencyExchange { Id = currencyExchangeId[0], FromCurrencyId = currencyId[0], ToCurrencyId = currencyId[1], ExchangeRate = 0.85m, ExchangeDate = DateTime.Now.AddDays(-10) },
                 new tblCurrencyExchange { Id = currencyExchangeId[1], FromCurrencyId = currencyId[1], ToCurrencyId = currencyId[0], ExchangeRate = 1.18m, ExchangeDate = DateTime.Now.AddDays(-5) },
                 new tblCurrencyExchange { Id = currencyExchangeId[2], FromCurrencyId = currencyId[0], ToCurrencyId = currencyId[1], ExchangeRate = 0.84m, ExchangeDate = DateTime.Now.AddDays(-3) }
-            };  
+            };
 
             modelBuilder.Entity<tblCurrencyExchange>().HasData(currencyExchanges);
+        }
+
+        private static string GetHash(string password)
+        {
+            using (var hasher = SHA256.Create())
+            {
+                var hashBytes = System.Text.Encoding.UTF8.GetBytes(password);
+                return Convert.ToBase64String(hasher.ComputeHash(hashBytes));
+            }
         }
     }
 }

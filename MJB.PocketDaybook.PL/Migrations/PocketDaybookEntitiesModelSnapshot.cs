@@ -63,69 +63,443 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
                             AccountCategory = 1,
-                            CurrentBalance = 500m,
+                            CurrentBalance = 11055m,
                             Description = "Spongebob cash account",
                             Name = "Cash",
                             NormalBalance = 1,
-                            StartingBalance = 0m,
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            StartingBalance = 10020m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
-                            AccountCategory = 5,
-                            CurrentBalance = 750m,
-                            Description = "Spongebob total payables",
-                            Name = "Accounts Payable",
-                            NormalBalance = 2,
-                            StartingBalance = 0m,
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
-                        },
-                        new
-                        {
-                            Id = new Guid("f6358326-9818-47a5-90c7-893519bc74b5"),
-                            AccountCategory = 6,
-                            CurrentBalance = 500.00m,
-                            Description = "Spongebob wages receivable",
-                            Name = "Wages receivable",
-                            NormalBalance = 2,
-                            StartingBalance = 0.00m,
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
-                        },
-                        new
-                        {
-                            Id = new Guid("6cdee046-d1b6-4eb8-b558-1293bb8c1386"),
+                            Id = new Guid("654819e8-5390-493e-b662-707ecaf1eaae"),
                             AccountCategory = 1,
-                            CurrentBalance = 500m,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob checking account",
+                            Name = "Checking",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("6f80c9a4-79c7-492a-b019-80b46ceb1978"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob savings account",
+                            Name = "Savings",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("ebd6656b-8ea5-4db2-b29f-cb740c663c34"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob retirement account",
+                            Name = "Retirement",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("ef1f2fec-5c84-4e76-bb71-da7997610673"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob brokerage account",
+                            Name = "Brokerage",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("c1520c6e-56d7-4a32-84fa-fa4feeb49944"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob property account",
+                            Name = "Property",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("97c384ad-5d0b-4f44-9ec1-24ae81cff87f"),
+                            AccountCategory = 2,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob credit card account",
+                            Name = "Credit card",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("5bbd0eda-019d-4728-b2c1-65301b443dfd"),
+                            AccountCategory = 2,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob loan account",
+                            Name = "Loan",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("a173a2c4-afb0-43fa-a45c-e525e295b279"),
+                            AccountCategory = 2,
+                            CurrentBalance = 24750m,
+                            Description = "Spongebob morgage account",
+                            Name = "Morgage",
+                            NormalBalance = 2,
+                            StartingBalance = 25000m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("c1bec398-c332-4fa2-beb1-a09523a40385"),
+                            AccountCategory = 3,
+                            CurrentBalance = -14980m,
+                            Description = "Spongebob net worth account",
+                            Name = "Net Worth",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("848104fe-257f-43a3-9a68-5ad89db2e494"),
+                            AccountCategory = 4,
+                            CurrentBalance = 1500m,
+                            Description = "Spongebob income account",
+                            Name = "Income",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("28d7063c-ebfa-4d08-91f3-40bb1e5e29f9"),
+                            AccountCategory = 4,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob secondary income account",
+                            Name = "Secondary Income",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("1e85add8-31b0-4771-935d-c34119ceeb12"),
+                            AccountCategory = 4,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob dividend account",
+                            Name = "Dividend",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("a415fc98-4696-4647-a03d-f767fcee7616"),
+                            AccountCategory = 4,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob interest account",
+                            Name = "Interest",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("bab8dd6a-4395-4cfa-8b99-56e761df9438"),
+                            AccountCategory = 5,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob rent account",
+                            Name = "Rent",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("b586aad5-9d3e-4416-9f7d-2890b74924ba"),
+                            AccountCategory = 5,
+                            CurrentBalance = 15m,
+                            Description = "Spongebob groceries account",
+                            Name = "Groceries",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("0a3be747-92cd-449f-8eef-914d5a68bd49"),
+                            AccountCategory = 5,
+                            CurrentBalance = 100m,
+                            Description = "Spongebob electricity account",
+                            Name = "Electricity",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("91e62639-9013-415c-b303-c2f3439a2c23"),
+                            AccountCategory = 5,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob phone account",
+                            Name = "Phone",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("0c824732-9114-467a-ae17-a970a2915347"),
+                            AccountCategory = 5,
+                            CurrentBalance = 100m,
+                            Description = "Spongebob internet account",
+                            Name = "Internet",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("e6ea908f-2485-483d-bcd8-a2e111adaea5"),
+                            AccountCategory = 5,
+                            CurrentBalance = 0m,
+                            Description = "Spongebob taxes account",
+                            Name = "Taxes",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("2062fa35-75ff-4ff9-a74b-ef04762e8545"),
+                            AccountCategory = 1,
+                            CurrentBalance = 4050m,
                             Description = "Squidward cash account",
                             Name = "Cash",
                             NormalBalance = 1,
+                            StartingBalance = 5000m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("b522f4a2-aac9-4fdf-9d6b-363fd64fb479"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Squidward checking account",
+                            Name = "Checking",
+                            NormalBalance = 1,
                             StartingBalance = 0m,
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("49f0e278-7dd6-4d88-928b-21595d90e2f4"),
+                            Id = new Guid("e215c095-a5fc-49c3-be67-cc993d50f5dc"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Squidward savings account",
+                            Name = "Savings",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("cd3a932b-063e-4c99-99c3-526969f59fe9"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Squidward retirement account",
+                            Name = "Retirement",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("9ae54615-87d8-49e7-a39b-5345cebd4b70"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Squidward brokerage account",
+                            Name = "Brokerage",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("be873ecf-b48f-421b-b92c-5f063352e493"),
+                            AccountCategory = 1,
+                            CurrentBalance = 0m,
+                            Description = "Squidward property account",
+                            Name = "Property",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("722b344a-9f93-4289-8596-29826510cdc5"),
+                            AccountCategory = 2,
+                            CurrentBalance = 0m,
+                            Description = "Squidward credit card account",
+                            Name = "Credit card",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("e4d8f613-4436-46ea-9b1a-8009944495d3"),
+                            AccountCategory = 2,
+                            CurrentBalance = 0m,
+                            Description = "Squidward loan account",
+                            Name = "Loan",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("c01eb97a-187f-4a25-8e7c-e14d387a85c4"),
+                            AccountCategory = 2,
+                            CurrentBalance = 49900m,
+                            Description = "Squidward morgage account",
+                            Name = "Morgage",
+                            NormalBalance = 2,
+                            StartingBalance = 50000m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("3d54fa4b-a83f-4139-a64f-077ebe18c9a4"),
+                            AccountCategory = 3,
+                            CurrentBalance = 0m,
+                            Description = "Squidward net worth account",
+                            Name = "Net Worth",
+                            NormalBalance = 2,
+                            StartingBalance = -45000m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("5da5fca8-75ce-4e29-a7cb-afcf0f72c497"),
+                            AccountCategory = 4,
+                            CurrentBalance = 1000m,
+                            Description = "Squidward income account",
+                            Name = "Income",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("bceac8c2-5c61-4703-9cd2-05ac6dda7c21"),
+                            AccountCategory = 4,
+                            CurrentBalance = 0m,
+                            Description = "Squidward secondary income account",
+                            Name = "Secondary Income",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("9433ce2a-85c5-4238-98a1-9fba972326d9"),
+                            AccountCategory = 4,
+                            CurrentBalance = 0m,
+                            Description = "Squidward dividend account",
+                            Name = "Dividend",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("a40eab67-f348-425b-827c-bc1d70ba9814"),
+                            AccountCategory = 4,
+                            CurrentBalance = 0m,
+                            Description = "Squidward interest account",
+                            Name = "Interest",
+                            NormalBalance = 2,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("1f1bd44b-07ea-4bde-98a4-773779b23e0b"),
                             AccountCategory = 5,
-                            CurrentBalance = 1000.00m,
-                            Description = "Squidward total payables",
-                            Name = "Accounts Payable",
-                            NormalBalance = 2,
-                            StartingBalance = 0.00m,
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            CurrentBalance = 0m,
+                            Description = "Squidward rent account",
+                            Name = "Rent",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("ef2e45f0-fa60-4664-afdc-72b2fcddd687"),
-                            AccountCategory = 6,
-                            CurrentBalance = 200.00m,
-                            Description = "Squidward wages receivable",
-                            Name = "Wages receivable",
-                            NormalBalance = 2,
-                            StartingBalance = 0.00m,
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            Id = new Guid("c32cb409-8066-46fc-b109-b1d116438af3"),
+                            AccountCategory = 5,
+                            CurrentBalance = 1500m,
+                            Description = "Squidward groceries account",
+                            Name = "Groceries",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("5fed347c-47bc-410f-a1e2-9c3c6d8df53b"),
+                            AccountCategory = 5,
+                            CurrentBalance = 150m,
+                            Description = "Squidward electricity account",
+                            Name = "Electricity",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("e3a463c8-b6e0-4e14-a0b3-da1da80e0c46"),
+                            AccountCategory = 5,
+                            CurrentBalance = 0m,
+                            Description = "Squidward phone account",
+                            Name = "Phone",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("7fdf2bd1-84ef-4f26-a56f-b5b70ae424ec"),
+                            AccountCategory = 5,
+                            CurrentBalance = 100m,
+                            Description = "Squidward internet account",
+                            Name = "Internet",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("d526d2ab-828e-48a6-9d2c-5f948b8d9034"),
+                            AccountCategory = 5,
+                            CurrentBalance = 0m,
+                            Description = "Squidward taxes account",
+                            Name = "Taxes",
+                            NormalBalance = 1,
+                            StartingBalance = 0m,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         });
                 });
 
@@ -173,39 +547,39 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9f9e5396-384f-44c6-9288-daf0c47b3b6c"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(7535),
+                            Id = new Guid("5fabf2b0-9a72-498b-806b-53d9a69a9592"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1114),
                             Description = "Spongebob budget for the month of June",
                             EndDate = new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             Name = "Monthly Budget",
                             StartDate = new DateTime(2024, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(7536),
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1116),
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("4f7e2b30-1ffb-4107-86c4-48caf7c45dcc"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(7540),
+                            Id = new Guid("487bf0e0-eeaa-4434-a3e8-7c40947c1a66"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1119),
                             Description = "Budget for the upcoming vacation",
                             EndDate = new DateTime(2024, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             Name = "Vacation Budget",
                             StartDate = new DateTime(2024, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(7541),
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1120),
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("8806acd7-ca9e-433e-a0f8-490602cfe4d8"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(7543),
+                            Id = new Guid("a923920a-6994-49c2-99ba-663af7c44a3f"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1122),
                             Description = "Squidward budget for the month of June",
                             EndDate = new DateTime(2024, 6, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
                             Name = "Monthly Budget",
                             StartDate = new DateTime(2024, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(7544),
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1123),
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         });
                 });
 
@@ -252,69 +626,69 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a307301a-34ba-4242-9964-9d5e685bdb3a"),
-                            AccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("55f4e158-b7de-4aba-859c-589faa2048a4"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
                             Amount = 1200.00m,
-                            BudgetId = new Guid("9f9e5396-384f-44c6-9288-daf0c47b3b6c"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8686),
+                            BudgetId = new Guid("5fabf2b0-9a72-498b-806b-53d9a69a9592"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1746),
                             Description = "Monthly rent payment",
                             Name = "Rent",
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8692)
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1749)
                         },
                         new
                         {
-                            Id = new Guid("3021aa0a-eb16-4f25-9ae8-4cf322829955"),
-                            AccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("d77ce1e2-4bc7-4c9e-bc2b-2f4185b22863"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
                             Amount = 300.00m,
-                            BudgetId = new Guid("9f9e5396-384f-44c6-9288-daf0c47b3b6c"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8696),
+                            BudgetId = new Guid("5fabf2b0-9a72-498b-806b-53d9a69a9592"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1753),
                             Description = "Monthly groceries",
                             Name = "Groceries",
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8697)
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1753)
                         },
                         new
                         {
-                            Id = new Guid("087594b2-6dc5-4885-8316-e5708eeb166a"),
-                            AccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("b308c892-1c56-46b8-b572-6fb11211d0a0"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
                             Amount = 500.00m,
-                            BudgetId = new Guid("4f7e2b30-1ffb-4107-86c4-48caf7c45dcc"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8700),
+                            BudgetId = new Guid("487bf0e0-eeaa-4434-a3e8-7c40947c1a66"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1756),
                             Description = "Flight tickets for vacation",
                             Name = "Flight",
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8701)
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1756)
                         },
                         new
                         {
-                            Id = new Guid("a972f077-abfb-438d-9902-4583895b6a90"),
-                            AccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("55f87152-4f13-481f-91ef-debed9924c1a"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
                             Amount = 800.00m,
-                            BudgetId = new Guid("4f7e2b30-1ffb-4107-86c4-48caf7c45dcc"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8703),
+                            BudgetId = new Guid("487bf0e0-eeaa-4434-a3e8-7c40947c1a66"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1758),
                             Description = "Hotel accommodation for vacation",
                             Name = "Hotel",
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8704)
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1759)
                         },
                         new
                         {
-                            Id = new Guid("7685a445-2b41-432c-bf08-2af7fba2a622"),
-                            AccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
+                            Id = new Guid("f1a38e5e-c83b-45ef-b3cc-a5b7d74aa195"),
+                            AccountId = new Guid("654819e8-5390-493e-b662-707ecaf1eaae"),
                             Amount = 1000.00m,
-                            BudgetId = new Guid("8806acd7-ca9e-433e-a0f8-490602cfe4d8"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8706),
+                            BudgetId = new Guid("a923920a-6994-49c2-99ba-663af7c44a3f"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1761),
                             Description = "Monthly rent payment",
                             Name = "Rent",
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8707)
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1762)
                         },
                         new
                         {
-                            Id = new Guid("a4f8d563-cbf3-4a9f-9557-24836ae030f9"),
-                            AccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
+                            Id = new Guid("7001c624-e6dd-44ff-8433-d59520fd6ba1"),
+                            AccountId = new Guid("654819e8-5390-493e-b662-707ecaf1eaae"),
                             Amount = 250.00m,
-                            BudgetId = new Guid("8806acd7-ca9e-433e-a0f8-490602cfe4d8"),
-                            CreatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8710),
+                            BudgetId = new Guid("a923920a-6994-49c2-99ba-663af7c44a3f"),
+                            CreatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1765),
                             Description = "Monthly groceries",
                             Name = "Groceries",
-                            UpdatedAt = new DateTime(2026, 10, 6, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(8710)
+                            UpdatedAt = new DateTime(2026, 11, 8, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(1765)
                         });
                 });
 
@@ -350,7 +724,7 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("95ae836f-71da-4093-812c-b7a8d4b35391"),
+                            Id = new Guid("45808775-cf03-41d1-9a2d-e5b13f116d00"),
                             Code = "USD",
                             DecimalPlaces = 2,
                             Name = "US Dollar",
@@ -358,7 +732,7 @@ namespace MJB.PocketDaybook.PL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3f65c461-16e9-4633-af06-e9d5d2c08beb"),
+                            Id = new Guid("d1abd229-2ff7-427c-b684-129a4e9c7f27"),
                             Code = "EUR",
                             DecimalPlaces = 2,
                             Name = "Euro",
@@ -396,27 +770,27 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3e197402-599b-43a1-8adc-841d6e4de98f"),
-                            ExchangeDate = new DateTime(2026, 9, 26, 23, 0, 22, 10, DateTimeKind.Local).AddTicks(6857),
+                            Id = new Guid("64d33766-e333-4fe6-8a9d-cdbb1521b7bb"),
+                            ExchangeDate = new DateTime(2026, 10, 29, 15, 25, 7, 61, DateTimeKind.Local).AddTicks(8106),
                             ExchangeRate = 0.85m,
-                            FromCurrencyId = new Guid("95ae836f-71da-4093-812c-b7a8d4b35391"),
-                            ToCurrencyId = new Guid("3f65c461-16e9-4633-af06-e9d5d2c08beb")
+                            FromCurrencyId = new Guid("45808775-cf03-41d1-9a2d-e5b13f116d00"),
+                            ToCurrencyId = new Guid("d1abd229-2ff7-427c-b684-129a4e9c7f27")
                         },
                         new
                         {
-                            Id = new Guid("0404cfd0-ca74-4805-9881-29a0718870ca"),
-                            ExchangeDate = new DateTime(2026, 10, 1, 23, 0, 22, 10, DateTimeKind.Local).AddTicks(6874),
+                            Id = new Guid("bae0a383-3fe5-4eb5-857a-9c58dd4bf3c4"),
+                            ExchangeDate = new DateTime(2026, 11, 3, 15, 25, 7, 61, DateTimeKind.Local).AddTicks(8123),
                             ExchangeRate = 1.18m,
-                            FromCurrencyId = new Guid("3f65c461-16e9-4633-af06-e9d5d2c08beb"),
-                            ToCurrencyId = new Guid("95ae836f-71da-4093-812c-b7a8d4b35391")
+                            FromCurrencyId = new Guid("d1abd229-2ff7-427c-b684-129a4e9c7f27"),
+                            ToCurrencyId = new Guid("45808775-cf03-41d1-9a2d-e5b13f116d00")
                         },
                         new
                         {
-                            Id = new Guid("c7fa5696-c3a6-470c-8a66-4d62315cd781"),
-                            ExchangeDate = new DateTime(2026, 10, 3, 23, 0, 22, 10, DateTimeKind.Local).AddTicks(6876),
+                            Id = new Guid("c30fbd29-05d1-41a3-b225-9af58d5c6558"),
+                            ExchangeDate = new DateTime(2026, 11, 5, 15, 25, 7, 61, DateTimeKind.Local).AddTicks(8126),
                             ExchangeRate = 0.84m,
-                            FromCurrencyId = new Guid("95ae836f-71da-4093-812c-b7a8d4b35391"),
-                            ToCurrencyId = new Guid("3f65c461-16e9-4633-af06-e9d5d2c08beb")
+                            FromCurrencyId = new Guid("45808775-cf03-41d1-9a2d-e5b13f116d00"),
+                            ToCurrencyId = new Guid("d1abd229-2ff7-427c-b684-129a4e9c7f27")
                         });
                 });
 
@@ -468,39 +842,39 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("88e8a6ef-a62a-4ae1-93ff-a12340a96e6c"),
-                            AccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("dbb5e8c5-66f3-409c-aa25-56804ff27a87"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
                             CurrentAmount = 2500.00m,
-                            MechantId = new Guid("16ce92c7-c9ba-4caa-a6c6-228c12e9459e"),
+                            MechantId = new Guid("f27644d1-6451-4999-8487-b0541d6c9955"),
                             Name = "Buy a Car",
                             TargetAmount = 10000.00m,
                             TargetDate = new DateTime(2025, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Type = "Savings",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("573f8e18-03a6-42dd-9db4-12168159645e"),
-                            AccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
+                            Id = new Guid("61e6e774-14bd-4a77-817c-e5e1f2c39c3e"),
+                            AccountId = new Guid("654819e8-5390-493e-b662-707ecaf1eaae"),
                             CurrentAmount = 1500.00m,
-                            MechantId = new Guid("f66baa82-3faa-413c-943c-8690694d82ea"),
+                            MechantId = new Guid("1445a199-8381-4bd7-990a-69b2499aa905"),
                             Name = "Vacation Fund",
                             TargetAmount = 5000.00m,
                             TargetDate = new DateTime(2024, 8, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Type = "Savings",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("c0938ac9-68e1-4c4f-9117-3e18d05b8c41"),
-                            AccountId = new Guid("6cdee046-d1b6-4eb8-b558-1293bb8c1386"),
+                            Id = new Guid("641eb589-f280-4ef5-a743-48f5a415aec7"),
+                            AccountId = new Guid("ebd6656b-8ea5-4db2-b29f-cb740c663c34"),
                             CurrentAmount = 800.00m,
-                            MechantId = new Guid("28677cdf-221b-422e-b1da-bb74347313e9"),
+                            MechantId = new Guid("669aea9b-4ae6-4a3e-8ce0-24f5f5e0a454"),
                             Name = "Emergency Fund",
                             TargetAmount = 3000.00m,
                             TargetDate = new DateTime(2024, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Type = "Savings",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         });
                 });
 
@@ -533,73 +907,73 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("bed05f38-3337-4959-8b8f-5ea797e1538e"),
+                            Id = new Guid("85f8709f-5385-44f8-849d-c0b5b1dd78ee"),
                             Description = "24-Slices",
                             Name = "Cheese",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("3ffe94ac-2cf5-4361-bd69-5234aca2a6f4"),
+                            Id = new Guid("afc35edc-cae7-437b-835e-e47d36e771b5"),
                             Description = "100-Pounds",
                             Name = "Snail Food",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("b02e972c-9ae6-4d38-b4e5-49094060817f"),
+                            Id = new Guid("b86789ef-1c26-4b8c-874c-c3f637fe1411"),
                             Description = "Replacement",
                             Name = "Fishing Net",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("bee9d512-8253-4bc5-be77-2ca536bb2d27"),
+                            Id = new Guid("4103d275-0ac1-4c02-9ea4-79b648cc98e8"),
                             Description = "C# Clairy 5000",
                             Name = "Clarinet",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("c9af5c23-9da1-4848-b1f2-5909e6555851"),
+                            Id = new Guid("50adb529-1187-4980-b18d-a496cae471db"),
                             Description = "12-Oz Blue",
                             Name = "Art Paint",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("cf7dd96c-3632-4728-a5d1-d28769dad70d"),
+                            Id = new Guid("50d05204-327d-4de1-8552-a42156d40f12"),
                             Description = "500-Pack",
                             Name = "Napkins",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("f692150d-59d7-4f49-bbd2-83f7f8a8109f"),
+                            Id = new Guid("8b170c7b-3ba4-4cc8-9aa8-630663efb880"),
                             Description = "12-Pack",
                             Name = "Buns",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("dd4b0175-bfc2-45aa-bbd8-7f76bb1cf259"),
+                            Id = new Guid("50715ab3-31c4-41db-8ed2-eaf6e9702ba2"),
                             Description = "1 Rock",
                             Name = "Rocks",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("4a121e38-8f2e-4de3-93e1-dcb21a07a174"),
+                            Id = new Guid("9d731340-689a-4702-a1ac-d7a3818dfc66"),
                             Description = "10 Gallons",
                             Name = "Gas",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("d58db43e-9b42-4544-9aa5-725eeba13cdb"),
+                            Id = new Guid("0dec4a85-843a-4f3d-9f35-cd8d8fc50ae7"),
                             Description = "24-Slices",
                             Name = "Cheese",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         });
                 });
 
@@ -621,6 +995,12 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.Property<DateTime>("PurchaseDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("TransactionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id")
                         .HasName("PK_tblItemPrices");
 
@@ -628,88 +1008,32 @@ namespace MJB.PocketDaybook.PL.Migrations
 
                     b.HasIndex("MerchantId");
 
+                    b.HasIndex("TransactionId");
+
+                    b.HasIndex("UserId");
+
                     b.ToTable("tblItemPrices");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4b763142-5b4a-45fe-8406-57090e94f62f"),
-                            ItemId = new Guid("bed05f38-3337-4959-8b8f-5ea797e1538e"),
-                            MerchantId = new Guid("16ce92c7-c9ba-4caa-a6c6-228c12e9459e"),
-                            Price = 5.99m,
-                            PurchaseDate = new DateTime(2026, 9, 26, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(44)
+                            Id = new Guid("b50dadc6-79ab-4edd-8a63-a8a0ea393ff7"),
+                            ItemId = new Guid("85f8709f-5385-44f8-849d-c0b5b1dd78ee"),
+                            MerchantId = new Guid("669aea9b-4ae6-4a3e-8ce0-24f5f5e0a454"),
+                            Price = 15.00m,
+                            PurchaseDate = new DateTime(2026, 11, 1, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(669),
+                            TransactionId = new Guid("8670c30b-123e-4f08-8a8a-21bb20e126bf"),
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("4b867900-4c1f-481f-97ad-73103b98853d"),
-                            ItemId = new Guid("3ffe94ac-2cf5-4361-bd69-5234aca2a6f4"),
-                            MerchantId = new Guid("f66baa82-3faa-413c-943c-8690694d82ea"),
-                            Price = 15.49m,
-                            PurchaseDate = new DateTime(2026, 10, 1, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(91)
-                        },
-                        new
-                        {
-                            Id = new Guid("7126d884-4937-4f2e-882d-a46ba05b4568"),
-                            ItemId = new Guid("b02e972c-9ae6-4d38-b4e5-49094060817f"),
-                            MerchantId = new Guid("28677cdf-221b-422e-b1da-bb74347313e9"),
-                            Price = 25.00m,
-                            PurchaseDate = new DateTime(2026, 10, 3, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(94)
-                        },
-                        new
-                        {
-                            Id = new Guid("b9a79170-95f3-4502-a639-200e8a96d594"),
-                            ItemId = new Guid("bee9d512-8253-4bc5-be77-2ca536bb2d27"),
-                            MerchantId = new Guid("35e3239b-a76e-465a-922a-dece4275e89f"),
-                            Price = 199.99m,
-                            PurchaseDate = new DateTime(2026, 9, 29, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(96)
-                        },
-                        new
-                        {
-                            Id = new Guid("16b43d3a-6b3f-4e69-8d64-888da25f7ccc"),
-                            ItemId = new Guid("c9af5c23-9da1-4848-b1f2-5909e6555851"),
-                            MerchantId = new Guid("c2c9ae04-4584-4b26-9e5a-3cd80c31e058"),
-                            Price = 12.75m,
-                            PurchaseDate = new DateTime(2026, 10, 4, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(98)
-                        },
-                        new
-                        {
-                            Id = new Guid("aed63234-286d-498a-9aa8-a1e0707bff29"),
-                            ItemId = new Guid("cf7dd96c-3632-4728-a5d1-d28769dad70d"),
-                            MerchantId = new Guid("16ce92c7-c9ba-4caa-a6c6-228c12e9459e"),
-                            Price = 8.99m,
-                            PurchaseDate = new DateTime(2026, 10, 5, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(100)
-                        },
-                        new
-                        {
-                            Id = new Guid("0c8320fa-b9ae-45bd-bea2-ad923cccdcbf"),
-                            ItemId = new Guid("f692150d-59d7-4f49-bbd2-83f7f8a8109f"),
-                            MerchantId = new Guid("f66baa82-3faa-413c-943c-8690694d82ea"),
-                            Price = 3.49m,
-                            PurchaseDate = new DateTime(2026, 10, 2, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(102)
-                        },
-                        new
-                        {
-                            Id = new Guid("6004ef99-e692-4d6d-8b97-9c8d82c488e4"),
-                            ItemId = new Guid("dd4b0175-bfc2-45aa-bbd8-7f76bb1cf259"),
-                            MerchantId = new Guid("28677cdf-221b-422e-b1da-bb74347313e9"),
-                            Price = 1.99m,
-                            PurchaseDate = new DateTime(2026, 9, 30, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(104)
-                        },
-                        new
-                        {
-                            Id = new Guid("5b936a3c-becc-4167-85bf-1a71f1c7edf0"),
-                            ItemId = new Guid("4a121e38-8f2e-4de3-93e1-dcb21a07a174"),
-                            MerchantId = new Guid("35e3239b-a76e-465a-922a-dece4275e89f"),
-                            Price = 30.00m,
-                            PurchaseDate = new DateTime(2026, 9, 28, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(106)
-                        },
-                        new
-                        {
-                            Id = new Guid("b64bddaa-f6ad-4d0a-84cc-28a03b4b6085"),
-                            ItemId = new Guid("d58db43e-9b42-4544-9aa5-725eeba13cdb"),
-                            MerchantId = new Guid("c2c9ae04-4584-4b26-9e5a-3cd80c31e058"),
-                            Price = 6.49m,
-                            PurchaseDate = new DateTime(2026, 9, 27, 23, 0, 22, 4, DateTimeKind.Local).AddTicks(108)
+                            Id = new Guid("612bff92-8abe-4dfe-a95f-12ad88ec1716"),
+                            ItemId = new Guid("4103d275-0ac1-4c02-9ea4-79b648cc98e8"),
+                            MerchantId = new Guid("db34b395-6078-468e-953f-8286da28c59c"),
+                            Price = 1500.00m,
+                            PurchaseDate = new DateTime(2026, 10, 31, 15, 25, 7, 58, DateTimeKind.Local).AddTicks(675),
+                            TransactionId = new Guid("fe45cd2d-4327-4af4-b7fb-4bee5d052c10"),
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         });
                 });
 
@@ -745,27 +1069,83 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ac2c3b99-7fa4-4fd6-9f82-65037674aca2"),
-                            EntryDate = new DateTime(2026, 9, 26, 23, 0, 22, 9, DateTimeKind.Local).AddTicks(5218),
-                            Memo = "Grocery shopping at Amazon",
-                            MerchantId = new Guid("16ce92c7-c9ba-4caa-a6c6-228c12e9459e"),
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            Id = new Guid("653dc786-8c1c-4aa1-9836-159f6e75a859"),
+                            EntryDate = new DateTime(2026, 10, 29, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6665),
+                            Memo = "Payday",
+                            MerchantId = new Guid("0b4fe1bb-775d-478f-9e76-9016fb00f1a5"),
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("f2738636-8d31-4cfa-95de-61ca6b4f1b8a"),
-                            EntryDate = new DateTime(2026, 10, 1, 23, 0, 22, 9, DateTimeKind.Local).AddTicks(5236),
-                            Memo = "Bought a new fishing net from Walmart",
-                            MerchantId = new Guid("f66baa82-3faa-413c-943c-8690694d82ea"),
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            Id = new Guid("dbf73d12-3ab8-47b5-8fe0-e6d7fbdb8ea3"),
+                            EntryDate = new DateTime(2026, 11, 3, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6686),
+                            Memo = "Power Payment",
+                            MerchantId = new Guid("f27644d1-6451-4999-8487-b0541d6c9955"),
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("032bb43d-1666-48f2-a774-d3ffd333474d"),
-                            EntryDate = new DateTime(2026, 10, 3, 23, 0, 22, 9, DateTimeKind.Local).AddTicks(5238),
-                            Memo = "Purchased art supplies from Target",
-                            MerchantId = new Guid("28677cdf-221b-422e-b1da-bb74347313e9"),
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            Id = new Guid("e5e6874f-ebfc-4924-b69f-37833f877a6b"),
+                            EntryDate = new DateTime(2026, 11, 5, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6688),
+                            Memo = "Morgage Payment",
+                            MerchantId = new Guid("1445a199-8381-4bd7-990a-69b2499aa905"),
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("29e3d13f-680d-4b47-9eeb-8455e82a8be1"),
+                            EntryDate = new DateTime(2026, 11, 1, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6690),
+                            Memo = "Groceries",
+                            MerchantId = new Guid("669aea9b-4ae6-4a3e-8ce0-24f5f5e0a454"),
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("e997100b-cc02-47e9-a90e-29308113827c"),
+                            EntryDate = new DateTime(2026, 11, 6, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6692),
+                            Memo = "Internet Payment",
+                            MerchantId = new Guid("f27644d1-6451-4999-8487-b0541d6c9955"),
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("69abee26-1c4e-4dea-a417-2503ef92374d"),
+                            EntryDate = new DateTime(2026, 11, 7, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6695),
+                            Memo = "Payday",
+                            MerchantId = new Guid("61bdcfea-bdbc-4e6e-9c4d-22513e3f19b2"),
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("98a6fb49-2445-46cf-ba45-2304d4e7a4d4"),
+                            EntryDate = new DateTime(2026, 11, 4, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6697),
+                            Memo = "Power Payment",
+                            MerchantId = new Guid("5a45da2b-cc61-4a42-8a05-13e02605b453"),
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("c2f28edb-bc4e-4bae-8c2e-c2dc02a06795"),
+                            EntryDate = new DateTime(2026, 11, 2, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6699),
+                            Memo = "Morgage Payment",
+                            MerchantId = new Guid("8b99f0a8-1a2b-47b8-b0a2-2fd943117cc5"),
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("f1ffdee8-ef64-48cc-b30e-a38221a22d14"),
+                            EntryDate = new DateTime(2026, 10, 31, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6701),
+                            Memo = "Groceries",
+                            MerchantId = new Guid("db34b395-6078-468e-953f-8286da28c59c"),
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("da721c7c-bbbc-45d1-913c-fffb887dcf9e"),
+                            EntryDate = new DateTime(2026, 10, 30, 15, 25, 7, 60, DateTimeKind.Local).AddTicks(6704),
+                            Memo = "Internet Payment",
+                            MerchantId = new Guid("5a45da2b-cc61-4a42-8a05-13e02605b453"),
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         });
                 });
 
@@ -804,57 +1184,183 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4d9ed5b7-4618-44a0-82d8-e1df135c1ea7"),
-                            AccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("93a3f136-636e-4553-98e2-2aba3e8175fa"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
                             Credit = 0.00m,
-                            Debit = 50.00m,
-                            JournalEntryId = new Guid("ac2c3b99-7fa4-4fd6-9f82-65037674aca2"),
-                            Memo = "Grocery shopping at Amazon"
+                            Debit = 1500.00m,
+                            JournalEntryId = new Guid("653dc786-8c1c-4aa1-9836-159f6e75a859"),
+                            Memo = "Income"
                         },
                         new
                         {
-                            Id = new Guid("8cded07a-3cbd-4fa5-a369-678af37b0f31"),
-                            AccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
-                            Credit = 50.00m,
+                            Id = new Guid("ee3e47a3-b02a-495f-b724-4a49efa5958e"),
+                            AccountId = new Guid("848104fe-257f-43a3-9a68-5ad89db2e494"),
+                            Credit = 1500.00m,
                             Debit = 0.00m,
-                            JournalEntryId = new Guid("ac2c3b99-7fa4-4fd6-9f82-65037674aca2"),
-                            Memo = "Grocery shopping at Amazon"
+                            JournalEntryId = new Guid("653dc786-8c1c-4aa1-9836-159f6e75a859"),
+                            Memo = "Income"
                         },
                         new
                         {
-                            Id = new Guid("6186e80d-545e-436b-bef3-7f2f76ed72e7"),
-                            AccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("5195fb08-809f-4509-9998-c309eafc0919"),
+                            AccountId = new Guid("0a3be747-92cd-449f-8eef-914d5a68bd49"),
                             Credit = 0.00m,
-                            Debit = 25.00m,
-                            JournalEntryId = new Guid("f2738636-8d31-4cfa-95de-61ca6b4f1b8a"),
-                            Memo = "Bought a new fishing net from Walmart"
+                            Debit = 100.00m,
+                            JournalEntryId = new Guid("dbf73d12-3ab8-47b5-8fe0-e6d7fbdb8ea3"),
+                            Memo = "Power Payment"
                         },
                         new
                         {
-                            Id = new Guid("4e64d6b1-9520-44b6-81c1-d886f9437242"),
-                            AccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
-                            Credit = 25.00m,
+                            Id = new Guid("fc169a0f-66da-4fa0-9afa-5b085441acd1"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
+                            Credit = 100.00m,
                             Debit = 0.00m,
-                            JournalEntryId = new Guid("f2738636-8d31-4cfa-95de-61ca6b4f1b8a"),
-                            Memo = "Bought a new fishing net from Walmart"
+                            JournalEntryId = new Guid("dbf73d12-3ab8-47b5-8fe0-e6d7fbdb8ea3"),
+                            Memo = "Power Payment"
                         },
                         new
                         {
-                            Id = new Guid("9629c442-b890-4d4a-b4be-3670e2ddd30e"),
-                            AccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
+                            Id = new Guid("bd170bc6-b243-44ce-b388-5cdaf7c6ff81"),
+                            AccountId = new Guid("a173a2c4-afb0-43fa-a45c-e525e295b279"),
                             Credit = 0.00m,
-                            Debit = 75.00m,
-                            JournalEntryId = new Guid("032bb43d-1666-48f2-a774-d3ffd333474d"),
-                            Memo = "Purchased art supplies from Target"
+                            Debit = 250.00m,
+                            JournalEntryId = new Guid("e5e6874f-ebfc-4924-b69f-37833f877a6b"),
+                            Memo = "Morgage Payment"
                         },
                         new
                         {
-                            Id = new Guid("b32174a0-2312-4363-a952-c2ccd1d5a1df"),
-                            AccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
-                            Credit = 75.00m,
+                            Id = new Guid("bc5f31ae-0606-4d94-a6a9-838e181a76ad"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
+                            Credit = 250.00m,
                             Debit = 0.00m,
-                            JournalEntryId = new Guid("032bb43d-1666-48f2-a774-d3ffd333474d"),
-                            Memo = "Purchased art supplies from Target"
+                            JournalEntryId = new Guid("e5e6874f-ebfc-4924-b69f-37833f877a6b"),
+                            Memo = "Morgage Payment"
+                        },
+                        new
+                        {
+                            Id = new Guid("099b5c7f-1374-4dc0-bdec-f0b5a7e9a0f2"),
+                            AccountId = new Guid("b586aad5-9d3e-4416-9f7d-2890b74924ba"),
+                            Credit = 0.00m,
+                            Debit = 15.00m,
+                            JournalEntryId = new Guid("29e3d13f-680d-4b47-9eeb-8455e82a8be1"),
+                            Memo = "Groceries"
+                        },
+                        new
+                        {
+                            Id = new Guid("813ff8d0-d55d-44a7-b84e-1b85c5f60219"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
+                            Credit = 15.00m,
+                            Debit = 0.00m,
+                            JournalEntryId = new Guid("29e3d13f-680d-4b47-9eeb-8455e82a8be1"),
+                            Memo = "Groceries"
+                        },
+                        new
+                        {
+                            Id = new Guid("6e26359e-d211-4e43-a85d-4ba75905795d"),
+                            AccountId = new Guid("0c824732-9114-467a-ae17-a970a2915347"),
+                            Credit = 0.00m,
+                            Debit = 100.00m,
+                            JournalEntryId = new Guid("e997100b-cc02-47e9-a90e-29308113827c"),
+                            Memo = "Internet Payment"
+                        },
+                        new
+                        {
+                            Id = new Guid("ee117914-2f93-4bdf-9717-ad5e096e9222"),
+                            AccountId = new Guid("1afcee89-992e-4e74-bf8c-242b0c783601"),
+                            Credit = 100.00m,
+                            Debit = 0.00m,
+                            JournalEntryId = new Guid("e997100b-cc02-47e9-a90e-29308113827c"),
+                            Memo = "Internet Payment"
+                        },
+                        new
+                        {
+                            Id = new Guid("0e2365df-31f4-4fcb-864f-f57aa270fd5a"),
+                            AccountId = new Guid("2062fa35-75ff-4ff9-a74b-ef04762e8545"),
+                            Credit = 0.00m,
+                            Debit = 1000.00m,
+                            JournalEntryId = new Guid("69abee26-1c4e-4dea-a417-2503ef92374d"),
+                            Memo = "Income"
+                        },
+                        new
+                        {
+                            Id = new Guid("f36ded0a-701b-4e76-ab57-a6f10ff86d0b"),
+                            AccountId = new Guid("5da5fca8-75ce-4e29-a7cb-afcf0f72c497"),
+                            Credit = 1000.00m,
+                            Debit = 0.00m,
+                            JournalEntryId = new Guid("69abee26-1c4e-4dea-a417-2503ef92374d"),
+                            Memo = "Income"
+                        },
+                        new
+                        {
+                            Id = new Guid("80952bba-395d-4759-bd1c-55bc24b4cc90"),
+                            AccountId = new Guid("5fed347c-47bc-410f-a1e2-9c3c6d8df53b"),
+                            Credit = 0.00m,
+                            Debit = 150.00m,
+                            JournalEntryId = new Guid("98a6fb49-2445-46cf-ba45-2304d4e7a4d4"),
+                            Memo = "Power Payment"
+                        },
+                        new
+                        {
+                            Id = new Guid("c1402771-906a-4f58-8439-6dc155194f58"),
+                            AccountId = new Guid("2062fa35-75ff-4ff9-a74b-ef04762e8545"),
+                            Credit = 150.00m,
+                            Debit = 0.00m,
+                            JournalEntryId = new Guid("98a6fb49-2445-46cf-ba45-2304d4e7a4d4"),
+                            Memo = "Power Payment"
+                        },
+                        new
+                        {
+                            Id = new Guid("0eef01d1-916f-42b6-a69a-19fda8e88130"),
+                            AccountId = new Guid("c01eb97a-187f-4a25-8e7c-e14d387a85c4"),
+                            Credit = 0.00m,
+                            Debit = 100.00m,
+                            JournalEntryId = new Guid("c2f28edb-bc4e-4bae-8c2e-c2dc02a06795"),
+                            Memo = "Morgage Payment"
+                        },
+                        new
+                        {
+                            Id = new Guid("8055ff93-6358-4698-b62e-27a3486baf4a"),
+                            AccountId = new Guid("2062fa35-75ff-4ff9-a74b-ef04762e8545"),
+                            Credit = 100.00m,
+                            Debit = 0.00m,
+                            JournalEntryId = new Guid("c2f28edb-bc4e-4bae-8c2e-c2dc02a06795"),
+                            Memo = "Morgage Payment"
+                        },
+                        new
+                        {
+                            Id = new Guid("14238403-f7de-4848-bfc5-664fdea0c062"),
+                            AccountId = new Guid("c32cb409-8066-46fc-b109-b1d116438af3"),
+                            Credit = 0.00m,
+                            Debit = 1500.00m,
+                            JournalEntryId = new Guid("f1ffdee8-ef64-48cc-b30e-a38221a22d14"),
+                            Memo = "Groceries"
+                        },
+                        new
+                        {
+                            Id = new Guid("e24f26d0-84fb-41e7-9ddc-531fc8226b9c"),
+                            AccountId = new Guid("2062fa35-75ff-4ff9-a74b-ef04762e8545"),
+                            Credit = 1500.00m,
+                            Debit = 0.00m,
+                            JournalEntryId = new Guid("f1ffdee8-ef64-48cc-b30e-a38221a22d14"),
+                            Memo = "Groceries"
+                        },
+                        new
+                        {
+                            Id = new Guid("18c7173d-f7ba-470e-9897-7cb94c157589"),
+                            AccountId = new Guid("7fdf2bd1-84ef-4f26-a56f-b5b70ae424ec"),
+                            Credit = 0.00m,
+                            Debit = 100.00m,
+                            JournalEntryId = new Guid("da721c7c-bbbc-45d1-913c-fffb887dcf9e"),
+                            Memo = "Internet Payment"
+                        },
+                        new
+                        {
+                            Id = new Guid("cd9b9f43-a5bd-4c7b-8cd9-f0d6af148e95"),
+                            AccountId = new Guid("2062fa35-75ff-4ff9-a74b-ef04762e8545"),
+                            Credit = 100.00m,
+                            Debit = 0.00m,
+                            JournalEntryId = new Guid("da721c7c-bbbc-45d1-913c-fffb887dcf9e"),
+                            Memo = "Internet Payment"
                         });
                 });
 
@@ -892,43 +1398,67 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("16ce92c7-c9ba-4caa-a6c6-228c12e9459e"),
-                            Description = "Online Retailer",
-                            Name = "Amazon",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb"),
-                            Website = "https://www.amazon.com"
+                            Id = new Guid("f27644d1-6451-4999-8487-b0541d6c9955"),
+                            Description = "Power and Internet",
+                            Name = "Bikini Bottom Power and Communications",
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee"),
+                            Website = "none"
                         },
                         new
                         {
-                            Id = new Guid("f66baa82-3faa-413c-943c-8690694d82ea"),
+                            Id = new Guid("1445a199-8381-4bd7-990a-69b2499aa905"),
+                            Description = "Banking and Morgage",
+                            Name = "First National Bank of Bikini Bottom",
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee"),
+                            Website = "none"
+                        },
+                        new
+                        {
+                            Id = new Guid("669aea9b-4ae6-4a3e-8ce0-24f5f5e0a454"),
                             Description = "Retail Store",
-                            Name = "Walmart",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb"),
-                            Website = "https://www.walmart.com"
+                            Name = "Quicky Mart",
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee"),
+                            Website = "none"
                         },
                         new
                         {
-                            Id = new Guid("28677cdf-221b-422e-b1da-bb74347313e9"),
+                            Id = new Guid("5a45da2b-cc61-4a42-8a05-13e02605b453"),
+                            Description = "Power and Internet",
+                            Name = "Bikini Bottom Power and Communications",
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394"),
+                            Website = "none"
+                        },
+                        new
+                        {
+                            Id = new Guid("8b99f0a8-1a2b-47b8-b0a2-2fd943117cc5"),
+                            Description = "Banking and Mortgage",
+                            Name = "First National Bank of Bikini Bottom",
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394"),
+                            Website = "none"
+                        },
+                        new
+                        {
+                            Id = new Guid("db34b395-6078-468e-953f-8286da28c59c"),
                             Description = "Retail Store",
-                            Name = "Target",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad"),
-                            Website = "https://www.target.com"
+                            Name = "Quicky Mart",
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394"),
+                            Website = "none"
                         },
                         new
                         {
-                            Id = new Guid("35e3239b-a76e-465a-922a-dece4275e89f"),
-                            Description = "Electronics Retailer",
-                            Name = "Best Buy",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad"),
-                            Website = "https://www.bestbuy.com"
+                            Id = new Guid("0b4fe1bb-775d-478f-9e76-9016fb00f1a5"),
+                            Description = "Restaurant",
+                            Name = "Krusty Krab",
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee"),
+                            Website = "none"
                         },
                         new
                         {
-                            Id = new Guid("c2c9ae04-4584-4b26-9e5a-3cd80c31e058"),
-                            Description = "Wholesale Retailer",
-                            Name = "Costco",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad"),
-                            Website = "https://www.costco.com"
+                            Id = new Guid("61bdcfea-bdbc-4e6e-9c4d-22513e3f19b2"),
+                            Description = "Restaurant",
+                            Name = "Krusty Krab",
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394"),
+                            Website = "none"
                         });
                 });
 
@@ -941,15 +1471,12 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid>("DestinationAccountId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Memo")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<Guid>("SourceAccountId")
+                    b.Property<Guid>("MerchantId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("TransactionCategoryId")
@@ -967,9 +1494,7 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasKey("Id")
                         .HasName("PK_tblTransaction");
 
-                    b.HasIndex("DestinationAccountId");
-
-                    b.HasIndex("SourceAccountId");
+                    b.HasIndex("MerchantId");
 
                     b.HasIndex("TransactionCategoryId");
 
@@ -980,123 +1505,113 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("dd2e05bc-b0fa-4aa7-89cf-ba801edff0a6"),
-                            Amount = 50.00m,
-                            DestinationAccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
-                            Memo = "Grocery shopping",
-                            SourceAccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
-                            TransactionCategoryId = new Guid("b1c1e2e4-0c28-4c42-9eff-d1f28e009c92"),
-                            TransactionDate = new DateTime(2026, 9, 26, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6927),
+                            Id = new Guid("ff7a14e0-4965-4766-b402-b149146fa6e6"),
+                            Amount = 1500.00m,
+                            Memo = "Income",
+                            MerchantId = new Guid("0b4fe1bb-775d-478f-9e76-9016fb00f1a5"),
+                            TransactionCategoryId = new Guid("e6ac526e-c7ef-4398-a68a-9ed8a2d68f2c"),
+                            TransactionDate = new DateTime(2026, 10, 29, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9791),
                             Type = 0,
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("353c1d8e-e2f8-4acf-bfd4-880228680577"),
+                            Id = new Guid("2ee64f30-7844-4df2-8e2b-7e649dca74c3"),
                             Amount = 100.00m,
-                            DestinationAccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
-                            Memo = "Salary payment",
-                            SourceAccountId = new Guid("f6358326-9818-47a5-90c7-893519bc74b5"),
-                            TransactionCategoryId = new Guid("a293d90c-61c2-4d93-84b8-6611a8c09f75"),
-                            TransactionDate = new DateTime(2026, 10, 1, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6950),
+                            Memo = "Power Payment",
+                            MerchantId = new Guid("f27644d1-6451-4999-8487-b0541d6c9955"),
+                            TransactionCategoryId = new Guid("ea47c947-79de-4699-8c10-1c27ac680244"),
+                            TransactionDate = new DateTime(2026, 11, 3, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9838),
                             Type = 1,
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("f9fe1bd3-4611-419e-a0b3-bdd240be822f"),
-                            Amount = 75.00m,
-                            DestinationAccountId = new Guid("49f0e278-7dd6-4d88-928b-21595d90e2f4"),
-                            Memo = "Grocery shopping",
-                            SourceAccountId = new Guid("6cdee046-d1b6-4eb8-b558-1293bb8c1386"),
-                            TransactionCategoryId = new Guid("9431024f-b5c9-42d2-be6b-e5f5fbe97f19"),
-                            TransactionDate = new DateTime(2026, 10, 3, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6955),
+                            Id = new Guid("b470e93a-f19c-47d8-b842-df2b67a2efba"),
+                            Amount = 250.00m,
+                            Memo = "Morgage Payment",
+                            MerchantId = new Guid("1445a199-8381-4bd7-990a-69b2499aa905"),
+                            TransactionCategoryId = new Guid("4700cc83-68fa-45dd-9cc4-4b5a4a71552c"),
+                            TransactionDate = new DateTime(2026, 11, 5, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9841),
                             Type = 0,
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("3fea7d0c-10f9-4c68-ac22-0af11681e7aa"),
-                            Amount = 200.00m,
-                            DestinationAccountId = new Guid("6cdee046-d1b6-4eb8-b558-1293bb8c1386"),
-                            Memo = "Freelance project payment",
-                            SourceAccountId = new Guid("ef2e45f0-fa60-4664-afdc-72b2fcddd687"),
-                            TransactionCategoryId = new Guid("b22f78c8-6087-49db-80e6-c7fe913123c1"),
-                            TransactionDate = new DateTime(2026, 9, 29, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6958),
+                            Id = new Guid("8670c30b-123e-4f08-8a8a-21bb20e126bf"),
+                            Amount = 15.00m,
+                            Memo = "Groceries",
+                            MerchantId = new Guid("669aea9b-4ae6-4a3e-8ce0-24f5f5e0a454"),
+                            TransactionCategoryId = new Guid("37276b94-b14a-40f3-a44b-0563122882a2"),
+                            TransactionDate = new DateTime(2026, 11, 1, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9843),
                             Type = 1,
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("06441391-6b65-478d-af92-5ce1cf40e170"),
-                            Amount = 30.00m,
-                            DestinationAccountId = new Guid("f6358326-9818-47a5-90c7-893519bc74b5"),
-                            Memo = "Utility bill payment",
-                            SourceAccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
-                            TransactionCategoryId = new Guid("b5eff47d-996a-4b08-81e4-300d672e02f8"),
-                            TransactionDate = new DateTime(2026, 10, 4, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6960),
+                            Id = new Guid("9fc043be-7579-4bdb-9b8c-b1113ddc235e"),
+                            Amount = 100.00m,
+                            Memo = "Internet Payment",
+                            MerchantId = new Guid("f27644d1-6451-4999-8487-b0541d6c9955"),
+                            TransactionCategoryId = new Guid("ea47c947-79de-4699-8c10-1c27ac680244"),
+                            TransactionDate = new DateTime(2026, 11, 6, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9846),
                             Type = 0,
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("4b8be19d-35a9-41f5-af62-ab0f860486b1"),
-                            Amount = 60.00m,
-                            DestinationAccountId = new Guid("ef2e45f0-fa60-4664-afdc-72b2fcddd687"),
-                            Memo = "Grocery shopping",
-                            SourceAccountId = new Guid("49f0e278-7dd6-4d88-928b-21595d90e2f4"),
-                            TransactionCategoryId = new Guid("b1c1e2e4-0c28-4c42-9eff-d1f28e009c92"),
-                            TransactionDate = new DateTime(2026, 10, 5, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6964),
+                            Id = new Guid("f90cfaac-db4a-4a32-9349-a97700db5b47"),
+                            Amount = 1000.00m,
+                            Memo = "Income",
+                            MerchantId = new Guid("61bdcfea-bdbc-4e6e-9c4d-22513e3f19b2"),
+                            TransactionCategoryId = new Guid("63a4c377-f628-41b5-9f1c-f3568956fb82"),
+                            TransactionDate = new DateTime(2026, 11, 7, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9849),
                             Type = 0,
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("4dda9148-bd6f-441d-bba4-08a45581c8c1"),
-                            Amount = 40.00m,
-                            DestinationAccountId = new Guid("39e1a12d-1b1c-421e-ab30-b26271958ee6"),
-                            Memo = "Utility bill payment",
-                            SourceAccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
-                            TransactionCategoryId = new Guid("a293d90c-61c2-4d93-84b8-6611a8c09f75"),
-                            TransactionDate = new DateTime(2026, 10, 2, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6966),
-                            Type = 0,
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
-                        },
-                        new
-                        {
-                            Id = new Guid("0ce8a8b1-5d68-46c7-8665-63b3ef94cf4a"),
-                            Amount = 90.00m,
-                            DestinationAccountId = new Guid("49f0e278-7dd6-4d88-928b-21595d90e2f4"),
-                            Memo = "Grocery shopping",
-                            SourceAccountId = new Guid("6cdee046-d1b6-4eb8-b558-1293bb8c1386"),
-                            TransactionCategoryId = new Guid("9431024f-b5c9-42d2-be6b-e5f5fbe97f19"),
-                            TransactionDate = new DateTime(2026, 9, 30, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6972),
-                            Type = 0,
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
-                        },
-                        new
-                        {
-                            Id = new Guid("47853160-a2ae-459e-9657-aa238c77e04b"),
+                            Id = new Guid("6226f569-7679-4d9e-ac50-723a2c0dae8b"),
                             Amount = 150.00m,
-                            DestinationAccountId = new Guid("b614e031-efed-4c4a-ae98-67c31d8f57d5"),
-                            Memo = "Freelance project payment",
-                            SourceAccountId = new Guid("f6358326-9818-47a5-90c7-893519bc74b5"),
-                            TransactionCategoryId = new Guid("b22f78c8-6087-49db-80e6-c7fe913123c1"),
-                            TransactionDate = new DateTime(2026, 9, 28, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6975),
-                            Type = 1,
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            Memo = "Power Payment",
+                            MerchantId = new Guid("5a45da2b-cc61-4a42-8a05-13e02605b453"),
+                            TransactionCategoryId = new Guid("3ad1fa92-91d1-4f17-8eb3-d16b5bbe643b"),
+                            TransactionDate = new DateTime(2026, 11, 4, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9852),
+                            Type = 0,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("dc7ec32a-13de-4930-a2ed-0a930df4350f"),
-                            Amount = 25.00m,
-                            DestinationAccountId = new Guid("6cdee046-d1b6-4eb8-b558-1293bb8c1386"),
-                            Memo = "Utility bill payment",
-                            SourceAccountId = new Guid("ef2e45f0-fa60-4664-afdc-72b2fcddd687"),
-                            TransactionCategoryId = new Guid("b5eff47d-996a-4b08-81e4-300d672e02f8"),
-                            TransactionDate = new DateTime(2026, 9, 27, 23, 0, 22, 6, DateTimeKind.Local).AddTicks(6978),
+                            Id = new Guid("6cb5b336-fc17-4442-9bc7-2e701ffeffda"),
+                            Amount = 100.00m,
+                            Memo = "Morgage Payment",
+                            MerchantId = new Guid("8b99f0a8-1a2b-47b8-b0a2-2fd943117cc5"),
+                            TransactionCategoryId = new Guid("7543548e-7f33-4b88-b29c-36d53452387c"),
+                            TransactionDate = new DateTime(2026, 11, 2, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9854),
                             Type = 0,
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("fe45cd2d-4327-4af4-b7fb-4bee5d052c10"),
+                            Amount = 1500.00m,
+                            Memo = "Groceries",
+                            MerchantId = new Guid("db34b395-6078-468e-953f-8286da28c59c"),
+                            TransactionCategoryId = new Guid("ea47c947-79de-4699-8c10-1c27ac680244"),
+                            TransactionDate = new DateTime(2026, 10, 31, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9856),
+                            Type = 1,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("04edbbbb-044c-48d5-a0da-4b4e3788c44e"),
+                            Amount = 100.00m,
+                            Memo = "Internet Payment",
+                            MerchantId = new Guid("5a45da2b-cc61-4a42-8a05-13e02605b453"),
+                            TransactionCategoryId = new Guid("3ad1fa92-91d1-4f17-8eb3-d16b5bbe643b"),
+                            TransactionDate = new DateTime(2026, 10, 30, 15, 25, 7, 57, DateTimeKind.Local).AddTicks(9859),
+                            Type = 0,
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         });
                 });
 
@@ -1129,38 +1644,66 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b1c1e2e4-0c28-4c42-9eff-d1f28e009c92"),
+                            Id = new Guid("37276b94-b14a-40f3-a44b-0563122882a2"),
                             Description = "Food and household items",
                             Name = "Groceries",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("a293d90c-61c2-4d93-84b8-6611a8c09f75"),
+                            Id = new Guid("ea47c947-79de-4699-8c10-1c27ac680244"),
                             Description = "Electricity, water, gas, etc.",
                             Name = "Utilities",
-                            UserId = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb")
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
                         },
                         new
                         {
-                            Id = new Guid("9431024f-b5c9-42d2-be6b-e5f5fbe97f19"),
+                            Id = new Guid("f7a5d296-c957-47c4-b38f-8bfc1e45844e"),
                             Description = "My food for the month",
                             Name = "Groceries",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("b22f78c8-6087-49db-80e6-c7fe913123c1"),
+                            Id = new Guid("98755b6f-b2d6-4842-b472-9d451a8fc60b"),
                             Description = "Gas, public transit, etc.",
                             Name = "Transportation",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         },
                         new
                         {
-                            Id = new Guid("b5eff47d-996a-4b08-81e4-300d672e02f8"),
+                            Id = new Guid("3ad1fa92-91d1-4f17-8eb3-d16b5bbe643b"),
                             Description = "Rent and bills",
                             Name = "Utilities",
-                            UserId = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad")
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("e6ac526e-c7ef-4398-a68a-9ed8a2d68f2c"),
+                            Description = "Money from various sources",
+                            Name = "Income",
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("63a4c377-f628-41b5-9f1c-f3568956fb82"),
+                            Description = "Money from various sources",
+                            Name = "Income",
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
+                        },
+                        new
+                        {
+                            Id = new Guid("4700cc83-68fa-45dd-9cc4-4b5a4a71552c"),
+                            Description = "Morgage, rent, upkeep",
+                            Name = "Housing",
+                            UserId = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee")
+                        },
+                        new
+                        {
+                            Id = new Guid("7543548e-7f33-4b88-b29c-36d53452387c"),
+                            Description = "Morgage, rent, upkeep",
+                            Name = "Housing",
+                            UserId = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394")
                         });
                 });
 
@@ -1170,7 +1713,11 @@ namespace MJB.PocketDaybook.PL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -1182,13 +1729,15 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ccb7611a-c0b9-4b2b-8911-0ddd565c30eb"),
-                            Name = "SpongeBob"
+                            Id = new Guid("d81c3320-5d37-4457-81a5-00d8447820ee"),
+                            Password = "Id/BjdBM1qNW4vHjboKFvAYKXVidOscH5WrJZUkDtYk=",
+                            UserName = "SpongeBob"
                         },
                         new
                         {
-                            Id = new Guid("311bd8fa-ccc9-47f3-8fcb-72c3762d12ad"),
-                            Name = "Squidward"
+                            Id = new Guid("b14efd12-e5cf-4922-819a-c7b230aed394"),
+                            Password = "v4wQdj5KSOuUfqw0k/69BP/Veu4VcQ2qi29rTwkfQa8=",
+                            UserName = "Squidward"
                         });
                 });
 
@@ -1293,18 +1842,34 @@ namespace MJB.PocketDaybook.PL.Migrations
                     b.HasOne("MJB.PocketDaybook.PL.Entities.tblItem", "Item")
                         .WithMany("ItemPrices")
                         .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("MJB.PocketDaybook.PL.Entities.tblMerchant", "Merchant")
                         .WithMany("ItemPrices")
                         .HasForeignKey("MerchantId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("MJB.PocketDaybook.PL.Entities.tblTransaction", "Transaction")
+                        .WithMany("ItemPrices")
+                        .HasForeignKey("TransactionId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("MJB.PocketDaybook.PL.Entities.tblUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Item");
 
                     b.Navigation("Merchant");
+
+                    b.Navigation("Transaction");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MJB.PocketDaybook.PL.Entities.tblJournalEntry", b =>
@@ -1357,15 +1922,9 @@ namespace MJB.PocketDaybook.PL.Migrations
 
             modelBuilder.Entity("MJB.PocketDaybook.PL.Entities.tblTransaction", b =>
                 {
-                    b.HasOne("MJB.PocketDaybook.PL.Entities.tblAccount", "DestinationAccount")
+                    b.HasOne("MJB.PocketDaybook.PL.Entities.tblMerchant", "Merchant")
                         .WithMany()
-                        .HasForeignKey("DestinationAccountId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("MJB.PocketDaybook.PL.Entities.tblAccount", "SourceAccount")
-                        .WithMany()
-                        .HasForeignKey("SourceAccountId")
+                        .HasForeignKey("MerchantId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -1381,9 +1940,7 @@ namespace MJB.PocketDaybook.PL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("DestinationAccount");
-
-                    b.Navigation("SourceAccount");
+                    b.Navigation("Merchant");
 
                     b.Navigation("TransactionCategory");
 
@@ -1422,6 +1979,11 @@ namespace MJB.PocketDaybook.PL.Migrations
                 });
 
             modelBuilder.Entity("MJB.PocketDaybook.PL.Entities.tblMerchant", b =>
+                {
+                    b.Navigation("ItemPrices");
+                });
+
+            modelBuilder.Entity("MJB.PocketDaybook.PL.Entities.tblTransaction", b =>
                 {
                     b.Navigation("ItemPrices");
                 });
