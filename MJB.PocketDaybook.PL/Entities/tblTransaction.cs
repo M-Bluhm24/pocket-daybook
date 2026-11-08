@@ -18,8 +18,7 @@
     public class tblTransaction : IEntity
     {
         public Guid Id { get; set; }
-        public Guid SourceAccountId { get; set; }
-        public Guid DestinationAccountId { get; set; }
+        public Guid MerchantId { get; set; }
         public Guid TransactionCategoryId { get; set; }
         public Guid UserId { get; set; }
         public decimal Amount { get; set; }
@@ -28,7 +27,8 @@
         public string Memo { get; set; }
         public virtual tblUser User { get; set; }
         public virtual tblTransactionCategory TransactionCategory { get; set; }
-        public virtual tblAccount SourceAccount { get; set; }
-        public virtual tblAccount DestinationAccount { get; set; }
+        public virtual tblMerchant Merchant { get; set; }
+        
+        public virtual ICollection<tblItemPrices> ItemPrices { get; set; } = new List<tblItemPrices>();
     }
 }

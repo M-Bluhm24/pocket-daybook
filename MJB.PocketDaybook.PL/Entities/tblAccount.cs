@@ -3,11 +3,10 @@
     public enum AccountCategory
     {
         Asset = 1,
-        Expense = 2,
-        Drawing = 3,
-        Capital = 4,
-        Liability = 5,
-        Income = 6
+        Liability = 2,
+        Equity = 3,
+        Income = 4,
+        Expense = 5
     }
 
     public enum NormalBalance
