@@ -21,7 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\MJB.PocketDaybook.PL\MJB.PocketDaybook.PL.csproj" />
+	  <ProjectReference Include="..\MJB.PocketDaybook.PL\MJB.PocketDaybook.PL.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -428,7 +428,7 @@ namespace MJB.PocketDaybook.PL.Data
                 entity.HasOne(e => e.User)
                       .WithMany(u => u.Budgets)
                       .HasForeignKey(e => e.UserId)
-                      .OnDelete(DeleteBehavior.Cascade);
+                      .OnDelete(DeleteBehavior.NoAction);
             });
 
             List<tblBudget> budgets = new List<tblBudget>
