@@ -1,4 +1,7 @@
-﻿
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
+using System.Linq;
+
 namespace MJB.PocketDaybook.PL.Test
 {
     [TestClass]
@@ -28,6 +31,7 @@ namespace MJB.PocketDaybook.PL.Test
         public void TestInitialize()
         {
             transaction = dc.Database.BeginTransaction();
+
         }
 
         [TestCleanup]

@@ -27,5 +27,30 @@
             int actual = base.DeleteTest(account);
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void InsertTest()
+        {
+            Guid userId = dc.Set<tblUser>()
+                .Where(u => u.UserName == "SpongeBob")
+                .Select(u => u.Id)
+                .FirstOrDefault();
+
+            Console.WriteLine($"User ID: {userId}");
+
+            var account = new tblAccount
+            {
+                Name = "New Account Name",
+                Description = "New Account Description",
+                StartingBalance = 1000.00m,
+                CurrentBalance = 1000.00m,
+                AccountCategory = AccountCategory.Asset,
+                NormalBalance = NormalBalance.Debit,
+                UserId = userId
+            };
+            int expected = 1;
+            int actual = base.InsertTest(account);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
